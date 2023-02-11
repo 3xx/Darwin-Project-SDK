@@ -1,0 +1,3212 @@
+Class: World.Object
+	ObjectProperty PersistentLevel;//[Size: 8]
+	ObjectProperty NetDriver;//[Size: 8]
+	ObjectProperty LineBatcher;//[Size: 8]
+	ObjectProperty PersistentLineBatcher;//[Size: 8]
+	ObjectProperty ForegroundLineBatcher;//[Size: 8]
+	ObjectProperty NetworkManager;//[Size: 8]
+	ObjectProperty PhysicsCollisionHandler;//[Size: 8]
+	ArrayProperty ExtraReferencedObjects;//[Size: 16]
+	ArrayProperty PerModuleDataObjects;//[Size: 16]
+	ArrayProperty StreamingLevels;//[Size: 16]
+	SetProperty StreamingLevelsToConsider;//[Size: 80]
+	StrProperty StreamingLevelsPrefix;//[Size: 16]
+	ObjectProperty CurrentLevelPendingVisibility;//[Size: 8]
+	ObjectProperty CurrentLevelPendingInvisibility;//[Size: 8]
+	ObjectProperty DemoNetDriver;//[Size: 8]
+	ObjectProperty MyParticleEventManager;//[Size: 8]
+	ObjectProperty DefaultPhysicsVolume;//[Size: 8]
+	ObjectProperty NavigationSystem;//[Size: 8]
+	ObjectProperty AuthorityGameMode;//[Size: 8]
+	ObjectProperty GameState;//[Size: 8]
+	ObjectProperty AISystem;//[Size: 8]
+	ObjectProperty AvoidanceManager;//[Size: 8]
+	ArrayProperty Levels;//[Size: 16]
+	ArrayProperty LevelCollections;//[Size: 16]
+	ObjectProperty CurrentLevel;//[Size: 8]
+	ObjectProperty OwningGameInstance;//[Size: 8]
+	ArrayProperty ParameterCollectionInstances;//[Size: 16]
+	ObjectProperty CanvasForRenderingToTarget;//[Size: 8]
+	ObjectProperty CanvasForDrawMaterialToRenderTarget;//[Size: 8]
+	ObjectProperty WorldComposition;//[Size: 8]
+	BoolProperty bAreConstraintsDirty;//[Size: 1]
+	StructProperty PSCPool;//[Size: 88]
+	void HandleTimelineScrubbed();// 0x1cf6220
+
+--------------------------------
+Class: Object
+	void ExecuteUbergraph();// 0xb6a140
+
+--------------------------------
+Class: WorldSettings.Info.Actor.Object
+	BoolProperty bEnableWorldBoundsChecks;//[Size: 1]
+	BoolProperty bEnableNavigationSystem;//[Size: 1]
+	BoolProperty bEnableAISystem;//[Size: 1]
+	BoolProperty bEnableWorldComposition;//[Size: 1]
+	BoolProperty bUseClientSideLevelStreamingVolumes;//[Size: 1]
+	BoolProperty bEnableWorldOriginRebasing;//[Size: 1]
+	BoolProperty bWorldGravitySet;//[Size: 1]
+	BoolProperty bGlobalGravitySet;//[Size: 1]
+	ObjectProperty NavigationSystemConfig;//[Size: 8]
+	ObjectProperty NavigationSystemConfigOverride;//[Size: 8]
+	FloatProperty KillZ;//[Size: 4]
+	ClassProperty KillZDamageType;//[Size: 8]
+	FloatProperty WorldGravityZ;//[Size: 4]
+	FloatProperty GlobalGravityZ;//[Size: 4]
+	ClassProperty DefaultPhysicsVolumeClass;//[Size: 8]
+	ClassProperty PhysicsCollisionHandlerClass;//[Size: 8]
+	ClassProperty DefaultGameMode;//[Size: 8]
+	ClassProperty GameNetworkManagerClass;//[Size: 8]
+	IntProperty PackedLightAndShadowMapTextureSize;//[Size: 4]
+	BoolProperty bMinimizeBSPSections;//[Size: 1]
+	StructProperty DefaultColorScale;//[Size: 12]
+	FloatProperty DefaultMaxDistanceFieldOcclusionDistance;//[Size: 4]
+	FloatProperty GlobalDistanceFieldViewDistance;//[Size: 4]
+	FloatProperty DynamicIndirectShadowsSelfShadowingIntensity;//[Size: 4]
+	BoolProperty bPrecomputeVisibility;//[Size: 1]
+	BoolProperty bPlaceCellsOnlyAlongCameraTracks;//[Size: 1]
+	IntProperty VisibilityCellSize;//[Size: 4]
+	ByteProperty VisibilityAggressiveness;//[Size: 1]
+	BoolProperty bForceNoPrecomputedLighting;//[Size: 1]
+	StructProperty LightmassSettings;//[Size: 84]
+	StructProperty DefaultReverbSettings;//[Size: 32]
+	StructProperty DefaultAmbientZoneSettings;//[Size: 36]
+	ObjectProperty DefaultBaseSoundMix;//[Size: 8]
+	FloatProperty WorldToMeters;//[Size: 4]
+	FloatProperty MonoCullingDistance;//[Size: 4]
+	ObjectProperty BookMarks;//[Size: 8]
+	FloatProperty TimeDilation;//[Size: 4]
+	FloatProperty MatineeTimeDilation;//[Size: 4]
+	FloatProperty DemoPlayTimeDilation;//[Size: 4]
+	FloatProperty MinGlobalTimeDilation;//[Size: 4]
+	FloatProperty MaxGlobalTimeDilation;//[Size: 4]
+	FloatProperty MinUndilatedFrameTime;//[Size: 4]
+	FloatProperty MaxUndilatedFrameTime;//[Size: 4]
+	ObjectProperty Pauser;//[Size: 8]
+	BoolProperty bHighPriorityLoading;//[Size: 1]
+	BoolProperty bHighPriorityLoadingLocal;//[Size: 1]
+	ArrayProperty ReplicationViewers;//[Size: 16]
+	BoolProperty bOverrideDefaultBroadphaseSettings;//[Size: 1]
+	StructProperty BroadphaseSettings;//[Size: 36]
+	ArrayProperty AssetUserData;//[Size: 16]
+	IntProperty MaxNumberOfBookmarks;//[Size: 4]
+	ClassProperty DefaultBookmarkClass;//[Size: 8]
+	ArrayProperty BookmarkArray;//[Size: 16]
+	ClassProperty LastBookmarkClass;//[Size: 8]
+	void OnRep_WorldGravityZ();// 0x82b1a0
+
+--------------------------------
+Class: Info.Actor.Object
+
+--------------------------------
+Class: Actor.Object
+	StructProperty PrimaryActorTick;//[Size: 88]
+	BoolProperty bHidden;//[Size: 1]
+	BoolProperty bNetTemporary;//[Size: 1]
+	BoolProperty bNetStartup;//[Size: 1]
+	BoolProperty bOnlyRelevantToOwner;//[Size: 1]
+	BoolProperty bAlwaysRelevant;//[Size: 1]
+	BoolProperty bReplicateMovement;//[Size: 1]
+	BoolProperty bTearOff;//[Size: 1]
+	BoolProperty bExchangedRoles;//[Size: 1]
+	BoolProperty bNetLoadOnClient;//[Size: 1]
+	BoolProperty bNetUseOwnerRelevancy;//[Size: 1]
+	BoolProperty bRelevantForNetworkReplays;//[Size: 1]
+	BoolProperty bReplayRewindable;//[Size: 1]
+	BoolProperty bAllowTickBeforeBeginPlay;//[Size: 1]
+	BoolProperty bAutoDestroyWhenFinished;//[Size: 1]
+	BoolProperty bBlockInput;//[Size: 1]
+	BoolProperty bCanBeDamaged;//[Size: 1]
+	BoolProperty bCollideWhenPlacing;//[Size: 1]
+	BoolProperty bFindCameraComponentWhenViewTarget;//[Size: 1]
+	BoolProperty bGenerateOverlapEventsDuringLevelStreaming;//[Size: 1]
+	BoolProperty bIgnoresOriginShifting;//[Size: 1]
+	BoolProperty bEnableAutoLODGeneration;//[Size: 1]
+	BoolProperty bIsEditorOnlyActor;//[Size: 1]
+	BoolProperty bActorSeamlessTraveled;//[Size: 1]
+	BoolProperty bReplicates;//[Size: 1]
+	BoolProperty bCanBeInCluster;//[Size: 1]
+	BoolProperty bAllowReceiveTickEventOnDedicatedServer;//[Size: 1]
+	BoolProperty bActorEnableCollision;//[Size: 1]
+	BoolProperty bActorIsBeingDestroyed;//[Size: 1]
+	ByteProperty RemoteRole;//[Size: 1]
+	StructProperty ReplicatedMovement;//[Size: 52]
+	FloatProperty InitialLifeSpan;//[Size: 4]
+	FloatProperty CustomTimeDilation;//[Size: 4]
+	StructProperty AttachmentReplication;//[Size: 64]
+	ObjectProperty Owner;//[Size: 8]
+	NameProperty NetDriverName;//[Size: 8]
+	ByteProperty Role;//[Size: 1]
+	ByteProperty NetDormancy;//[Size: 1]
+	EnumProperty SpawnCollisionHandlingMethod;//[Size: 1]
+	ByteProperty AutoReceiveInput;//[Size: 1]
+	IntProperty InputPriority;//[Size: 4]
+	ObjectProperty InputComponent;//[Size: 8]
+	FloatProperty NetCullDistanceSquared;//[Size: 4]
+	IntProperty NetTag;//[Size: 4]
+	FloatProperty NetUpdateFrequency;//[Size: 4]
+	FloatProperty MinNetUpdateFrequency;//[Size: 4]
+	FloatProperty NetPriority;//[Size: 4]
+	ObjectProperty Instigator;//[Size: 8]
+	ArrayProperty Children;//[Size: 16]
+	ObjectProperty RootComponent;//[Size: 8]
+	ArrayProperty ControllingMatineeActors;//[Size: 16]
+	ArrayProperty Layers;//[Size: 16]
+	WeakObjectProperty ParentComponent;//[Size: 8]
+	ArrayProperty Tags;//[Size: 16]
+	MulticastDelegateProperty OnTakeAnyDamage;//[Size: 16]
+	MulticastDelegateProperty OnTakePointDamage;//[Size: 16]
+	MulticastDelegateProperty OnTakeRadialDamage;//[Size: 16]
+	MulticastDelegateProperty OnActorBeginOverlap;//[Size: 16]
+	MulticastDelegateProperty OnActorEndOverlap;//[Size: 16]
+	MulticastDelegateProperty OnBeginCursorOver;//[Size: 16]
+	MulticastDelegateProperty OnEndCursorOver;//[Size: 16]
+	MulticastDelegateProperty OnClicked;//[Size: 16]
+	MulticastDelegateProperty OnReleased;//[Size: 16]
+	MulticastDelegateProperty OnInputTouchBegin;//[Size: 16]
+	MulticastDelegateProperty OnInputTouchEnd;//[Size: 16]
+	MulticastDelegateProperty OnInputTouchEnter;//[Size: 16]
+	MulticastDelegateProperty OnInputTouchLeave;//[Size: 16]
+	MulticastDelegateProperty OnActorHit;//[Size: 16]
+	MulticastDelegateProperty OnDestroyed;//[Size: 16]
+	MulticastDelegateProperty OnEndPlay;//[Size: 16]
+	ArrayProperty InstanceComponents;//[Size: 16]
+	ArrayProperty BlueprintCreatedComponents;//[Size: 16]
+	void WasRecentlyRendered();// 0x1bc3c70
+	void UserConstructionScript();// 0xb6a140
+	void TearOff();// 0x15394b0
+	void SnapRootComponentTo();// 0x1bc3bb0
+	void SetTickGroup();// 0x1bc3aa0
+	void SetTickableWhenPaused();// 0x1bc3b20
+	void SetReplicates();// 0x1bc3a10
+	void SetReplicateMovement();// 0x1bc3980
+	void SetOwner();// 0x8378e0
+	void SetNetDormancy();// 0x1bc3900
+	void SetLifeSpan();// 0x1bc3880
+	void SetActorTickInterval();// 0x1bc3800
+	void SetActorTickEnabled();// 0x1bc3770
+	void SetActorScale3D();// 0x1bc36e0
+	void SetActorRelativeScale3D();// 0x1bc3650
+	void SetActorHiddenInGame();// 0x1bc35c0
+	void SetActorEnableCollision();// 0x1bc3530
+	void RemoveTickPrerequisiteComponent();// 0x1bc34a0
+	void RemoveTickPrerequisiteActor();// 0x1bc3410
+	void ReceiveTick();// 0xb6a140
+	void ReceiveRadialDamage();// 0xb6a140
+	void ReceivePointDamage();// 0xb6a140
+	void ReceiveHit();// 0xb6a140
+	void ReceiveEndPlay();// 0xb6a140
+	void ReceiveDestroyed();// 0xb6a140
+	void ReceiveBeginPlay();// 0xb6a140
+	void ReceiveAnyDamage();// 0xb6a140
+	void ReceiveActorOnReleased();// 0xb6a140
+	void ReceiveActorOnInputTouchLeave();// 0xb6a140
+	void ReceiveActorOnInputTouchEnter();// 0xb6a140
+	void ReceiveActorOnInputTouchEnd();// 0xb6a140
+	void ReceiveActorOnInputTouchBegin();// 0xb6a140
+	void ReceiveActorOnClicked();// 0xb6a140
+	void ReceiveActorEndOverlap();// 0xb6a140
+	void ReceiveActorEndCursorOver();// 0xb6a140
+	void ReceiveActorBeginOverlap();// 0xb6a140
+	void ReceiveActorBeginCursorOver();// 0xb6a140
+	void PrestreamTextures();// 0x1bc3300
+	void OnRep_ReplicateMovement();// 0x15394d0
+	void OnRep_ReplicatedMovement();// 0x1bc32e0
+	void OnRep_Owner();// 0x1bc32c0
+	void OnRep_Instigator();// 0x1bc32a0
+	void OnRep_AttachmentReplication();// 0x1bc3280
+	void MakeNoise();// 0x1bc30f0
+	void MakeMIDForMaterial();// 0x1bc3060
+	void K2_TeleportTo();// 0x1bc2f70
+	void K2_SetActorTransform();// 0x1bc2d80
+	void K2_SetActorRotation();// 0x1bc2ca0
+	void K2_SetActorRelativeTransform();// 0x1bc2ab0
+	void K2_SetActorRelativeRotation();// 0x1bc2900
+	void K2_SetActorRelativeLocation();// 0x1bc2750
+	void K2_SetActorLocationAndRotation();// 0x1bc2560
+	void K2_SetActorLocation();// 0x1bc23b0
+	void K2_OnReset();// 0xb6a140
+	void K2_OnEndViewTarget();// 0xb6a140
+	void K2_OnBecomeViewTarget();// 0xb6a140
+	void K2_GetRootComponent();// 0x1bc2390
+	void K2_GetActorRotation();// 0x1bc22d0
+	void K2_GetActorLocation();// 0x1bc2250
+	void K2_DetachFromActor();// 0x1bc2150
+	void K2_DestroyComponent();// 0x1bc20d0
+	void K2_DestroyActor();// 0x1bc20b0
+	void K2_AttachToComponent();// 0x1bc1ef0
+	void K2_AttachToActor();// 0x1bc1d30
+	void K2_AttachRootComponentToActor();// 0x1bc1be0
+	void K2_AttachRootComponentTo();// 0x1bc1a90
+	void K2_AddActorWorldTransform();// 0x1bc18a0
+	void K2_AddActorWorldRotation();// 0x1bc16f0
+	void K2_AddActorWorldOffset();// 0x1bc1540
+	void K2_AddActorLocalTransform();// 0x1bc1350
+	void K2_AddActorLocalRotation();// 0x1bc11a0
+	void K2_AddActorLocalOffset();// 0x1bc0ff0
+	void IsOverlappingActor();// 0x1bc0f60
+	void IsChildActor();// 0x1bc0f30
+	void IsActorTickEnabled();// 0x1bc0f00
+	void IsActorBeingDestroyed();// 0x1bc0ed0
+	void HasAuthority();// 0x1bc0ea0
+	void GetVerticalDistanceTo();// 0x1bc0e00
+	void GetVelocity();// 0x1bc0dc0
+	void GetTransform();// 0x1bc0d70
+	void GetTickableWhenPaused();// 0x1bc0d40
+	void GetSquaredDistanceTo();// 0x1bc0ca0
+	void GetRemoteRole();// 0x1bc0c80
+	void GetParentComponent();// 0x1bc0c50
+	void GetParentActor();// 0x1bc0c20
+	void GetOwner();// 0x1bc0c00
+	void GetOverlappingComponents();// 0x1bc0b50
+	void GetOverlappingActors();// 0x1bc0a60
+	void GetLocalRole();// 0x1bc0a40
+	void GetLifeSpan();// 0x1bc0a00
+	void GetInstigatorController();// 0x1bc09d0
+	void GetInstigator();// 0x1bc09a0
+	void GetInputVectorAxisValue();// 0x1bc08a0
+	void GetInputAxisValue();// 0x1bc0800
+	void GetInputAxisKeyValue();// 0x1bc0710
+	void GetHorizontalDotProductTo();// 0x1bc0670
+	void GetHorizontalDistanceTo();// 0x1bc05d0
+	void GetGameTimeSinceCreation();// 0x1bc05a0
+	void GetDotProductTo();// 0x1bc0500
+	void GetDistanceTo();// 0x1bc0460
+	void GetComponentsByTag();// 0x1bc0360
+	void GetComponentsByClass();// 0x1bc0280
+	void GetComponentByClass();// 0x1bc01f0
+	void GetAttachParentSocketName();// 0x1bc0100
+	void GetAttachParentActor();// 0x1bc00d0
+	void GetAttachedActors();// 0x1bc0140
+	void GetAllChildActors();// 0x1bbffd0
+	void GetActorUpVector();// 0x1bbff60
+	void GetActorTimeDilation();// 0x1bbff30
+	void GetActorTickInterval();// 0x1bbff00
+	void GetActorScale3D();// 0x1bbfec0
+	void GetActorRightVector();// 0x1bbfe50
+	void GetActorRelativeScale3D();// 0x1bbfe10
+	void GetActorForwardVector();// 0x1bbfda0
+	void GetActorEyesViewPoint();// 0x1bbfcb0
+	void GetActorEnableCollision();// 0x1bbfc80
+	void GetActorBounds();// 0x1bbfb50
+	void ForceNetUpdate();// 0x1bbfb30
+	void FlushNetDormancy();// 0x1bbfb10
+	void EnableInput();// 0x14af8f0
+	void DisableInput();// 0x14a10c0
+	void DetachRootComponentFromParent();// 0x1bbfa80
+	void AddTickPrerequisiteComponent();// 0x1bbf9f0
+	void AddTickPrerequisiteActor();// 0x1bbf960
+	void AddComponent();// 0x1bbf7a0
+	void ActorHasTag();// 0x1bbf710
+
+--------------------------------
+Class: CameraActor.Actor.Object
+	ByteProperty AutoActivateForPlayer;//[Size: 1]
+	ObjectProperty CameraComponent;//[Size: 8]
+	ObjectProperty SceneComponent;//[Size: 8]
+	BoolProperty bConstrainAspectRatio;//[Size: 1]
+	FloatProperty AspectRatio;//[Size: 4]
+	FloatProperty FOVAngle;//[Size: 4]
+	FloatProperty PostProcessBlendWeight;//[Size: 4]
+	StructProperty PostProcessSettings;//[Size: 1248]
+	void GetAutoActivatePlayerIndex();// 0x1bebd00
+
+--------------------------------
+Class: SkyLight.Info.Actor.Object
+	ObjectProperty LightComponent;//[Size: 8]
+	BoolProperty bEnabled;//[Size: 1]
+	void OnRep_bEnabled();// 0x82b1a0
+
+--------------------------------
+Class: DarwinCharacterModelBP_C.DarwinCharacterModel.Actor.Object
+	StructProperty UberGraphFrame;//[Size: 8]
+	void ShowPedestal(None(None) None);// 0xb6a140
+	void SetInShop(None(None) None);// 0xb6a140
+	void UserConstructionScript(None(None) None);// 0xb6a140
+	void PlayAnimation(None(None) None);// 0xb6a140
+	void SetAnimation(None(None) None);// 0xb6a140
+	void SetAnimPosition(None(None) None);// 0xb6a140
+	void UpdateLights(None(None) None);// 0xb6a140
+	void ReceiveTick(None(None) None);// 0xb6a140
+	void ReceiveBeginPlay(None(None) None);// 0xb6a140
+	void ExecuteUbergraph_DarwinCharacterModelBP(None(None) None);// 0xb6a140
+	ObjectProperty SpotLight9;//[Size: 8]
+	ObjectProperty Decal;//[Size: 8]
+	ObjectProperty Sphere1;//[Size: 8]
+	ObjectProperty StaticMesh26;//[Size: 8]
+	ObjectProperty StaticMesh25;//[Size: 8]
+	ObjectProperty StaticMesh24;//[Size: 8]
+	ObjectProperty StaticMesh23;//[Size: 8]
+	ObjectProperty SM_SwipeCircle_01;//[Size: 8]
+	ObjectProperty StaticMesh22;//[Size: 8]
+	ObjectProperty StaticMesh21;//[Size: 8]
+	ObjectProperty StaticMesh16;//[Size: 8]
+	ObjectProperty StaticMesh15;//[Size: 8]
+	ObjectProperty StaticMesh20;//[Size: 8]
+	ObjectProperty StaticMesh19;//[Size: 8]
+	ObjectProperty StaticMesh18;//[Size: 8]
+	ObjectProperty SpotLight8;//[Size: 8]
+	ObjectProperty StaticMesh17;//[Size: 8]
+	ObjectProperty StaticMesh14;//[Size: 8]
+	ObjectProperty Infil1_Courthouse_PlinthFloor_01c;//[Size: 8]
+	ObjectProperty SpotLight7;//[Size: 8]
+	ObjectProperty SpotLight6;//[Size: 8]
+	ObjectProperty SpotLight5;//[Size: 8]
+	ObjectProperty SpotLight4;//[Size: 8]
+	ObjectProperty SpotLight3;//[Size: 8]
+	ObjectProperty SpotLight2;//[Size: 8]
+	ObjectProperty SpotLight1;//[Size: 8]
+	ObjectProperty SpotLight;//[Size: 8]
+	ObjectProperty StaticMesh13;//[Size: 8]
+	ObjectProperty StaticMesh12;//[Size: 8]
+	ObjectProperty StaticMesh11;//[Size: 8]
+	ObjectProperty StaticMesh10;//[Size: 8]
+	ObjectProperty StaticMesh9;//[Size: 8]
+	ObjectProperty StaticMesh8;//[Size: 8]
+	ObjectProperty StaticMesh7;//[Size: 8]
+	ObjectProperty StaticMesh6;//[Size: 8]
+	ObjectProperty StaticMesh5;//[Size: 8]
+	ObjectProperty StaticMesh4;//[Size: 8]
+	ObjectProperty StaticMesh3;//[Size: 8]
+	ObjectProperty Beigne_StaticMesh;//[Size: 8]
+	ObjectProperty StaticMesh2;//[Size: 8]
+	ObjectProperty StaticMesh1;//[Size: 8]
+	ObjectProperty StaticMesh;//[Size: 8]
+	ObjectProperty Sphere;//[Size: 8]
+	ObjectProperty PedestalFX;//[Size: 8]
+	ObjectProperty Pedestal;//[Size: 8]
+	ObjectProperty DefaultSceneRoot;//[Size: 8]
+	IntProperty CurrentAnim;//[Size: 4]
+	IntProperty CurrentAxeId;//[Size: 4]
+	BoolProperty Playing;//[Size: 1]
+	FloatProperty animPosition;//[Size: 4]
+	BoolProperty InShop;//[Size: 1]
+	BoolProperty ShowAxeInShop;//[Size: 1]
+	BoolProperty ShowBowInShop;//[Size: 1]
+	ObjectProperty EmissiveMat;//[Size: 8]
+	ObjectProperty HTBlendSpace;//[Size: 8]
+	ObjectProperty BGBlendSpace;//[Size: 8]
+	BoolProperty bInParty;//[Size: 1]
+	BoolProperty isFriend;//[Size: 1]
+	BoolProperty canShowAsFriend;//[Size: 1]
+	NameProperty Color_Name;//[Size: 8]
+
+--------------------------------
+Class: DarwinCharacterModel.Actor.Object
+	ArrayProperty TickRatesDistances;//[Size: 16]
+	ArrayProperty TickRates;//[Size: 16]
+	IntProperty SuitVersionIndex;//[Size: 4]
+	ObjectProperty CurrentCustomizationCollection;//[Size: 8]
+	FloatProperty BoundingScale;//[Size: 4]
+	ObjectProperty SkeletalMeshComp;//[Size: 8]
+	ObjectProperty DarwinCharacterOwner;//[Size: 8]
+	ObjectProperty ModelGlassMaterial;//[Size: 8]
+	ObjectProperty ModelGlassMatInstDyn;//[Size: 8]
+	BoolProperty bDressRoomModel;//[Size: 1]
+	BoolProperty bDarwinCharacter;//[Size: 1]
+	BoolProperty bClone;//[Size: 1]
+	BoolProperty bBattlePassModel;//[Size: 1]
+	BoolProperty bUseUpgradedBoots;//[Size: 1]
+	BoolProperty bUseCoatWithArmor;//[Size: 1]
+	BoolProperty bShowCoat;//[Size: 1]
+	BoolProperty bShowArmor;//[Size: 1]
+	BoolProperty bShowHands;//[Size: 1]
+	BoolProperty bShowHead;//[Size: 1]
+	BoolProperty bShowHairs;//[Size: 1]
+	BoolProperty bShowArrow;//[Size: 1]
+	BoolProperty bShowAxe;//[Size: 1]
+	BoolProperty bShowBow;//[Size: 1]
+	BoolProperty bShowWings;//[Size: 1]
+	BoolProperty bShowGauntlet;//[Size: 1]
+	EnumProperty GauntletState;//[Size: 1]
+	IntProperty ShirtSkelIndex;//[Size: 4]
+	IntProperty PantsSkelIndex;//[Size: 4]
+	IntProperty SkinSkelIndex;//[Size: 4]
+	IntProperty ArmorSkelIndex;//[Size: 4]
+	IntProperty BootsSkelIndex;//[Size: 4]
+	IntProperty CoatSkelIndex;//[Size: 4]
+	IntProperty AxeSkelIndex;//[Size: 4]
+	IntProperty BowSkelIndex;//[Size: 4]
+	IntProperty HelmetSkelIndex;//[Size: 4]
+	IntProperty HairsSkelIndex;//[Size: 4]
+	IntProperty BeardSkelIndex;//[Size: 4]
+	IntProperty WingsSkelIndex;//[Size: 4]
+	IntProperty GauntletSkelIndex;//[Size: 4]
+	IntProperty ShirtMatIndex;//[Size: 4]
+	IntProperty ShirtGauntletMatIndex;//[Size: 4]
+	IntProperty PantsMatIndex;//[Size: 4]
+	IntProperty SkinMatIndex;//[Size: 4]
+	IntProperty ArmorMatIndex;//[Size: 4]
+	IntProperty BootsMatIndex;//[Size: 4]
+	IntProperty CoatMatIndex;//[Size: 4]
+	IntProperty AxeMatIndex;//[Size: 4]
+	IntProperty BowMatIndex;//[Size: 4]
+	IntProperty HelmetMatIndex;//[Size: 4]
+	IntProperty EyesMatIndex;//[Size: 4]
+	IntProperty HairsMatIndex;//[Size: 4]
+	IntProperty BeardMatIndex;//[Size: 4]
+	IntProperty FacePaintIndex;//[Size: 4]
+	IntProperty WingsMatIndex;//[Size: 4]
+	IntProperty GauntletMatIndex;//[Size: 4]
+	ObjectProperty SkelShirt;//[Size: 8]
+	ObjectProperty SkelPants;//[Size: 8]
+	ObjectProperty SkelSkin;//[Size: 8]
+	ObjectProperty SkelArmor;//[Size: 8]
+	ObjectProperty SkelBoots;//[Size: 8]
+	ObjectProperty SkelCoat;//[Size: 8]
+	ObjectProperty SkelAxe;//[Size: 8]
+	ObjectProperty SkelBow;//[Size: 8]
+	ObjectProperty SkelHelmet;//[Size: 8]
+	ObjectProperty SkelHands;//[Size: 8]
+	ObjectProperty SkelHairs;//[Size: 8]
+	ObjectProperty SkelBeard;//[Size: 8]
+	ObjectProperty SkelArrow;//[Size: 8]
+	ObjectProperty SMArrow;//[Size: 8]
+	ObjectProperty SkelNakedShirt;//[Size: 8]
+	ObjectProperty SkelNakedPants;//[Size: 8]
+	ObjectProperty SkelNakedArmor;//[Size: 8]
+	ObjectProperty SkelWings;//[Size: 8]
+	ObjectProperty SkelGauntlet;//[Size: 8]
+	ObjectProperty SkelGauntletArm;//[Size: 8]
+	ObjectProperty MatShirt;//[Size: 8]
+	ObjectProperty MatPants;//[Size: 8]
+	ObjectProperty MatPantsShoes;//[Size: 8]
+	ObjectProperty MatHeadSkin;//[Size: 8]
+	ObjectProperty MatBodySkin;//[Size: 8]
+	ObjectProperty MatBodySkinSwimsuit;//[Size: 8]
+	ObjectProperty MatArmor;//[Size: 8]
+	ObjectProperty MatBoots;//[Size: 8]
+	ObjectProperty MatCoat;//[Size: 8]
+	MapProperty MatAxe;//[Size: 80]
+	ObjectProperty MatBow;//[Size: 8]
+	ObjectProperty MatHelmet;//[Size: 8]
+	ObjectProperty MatHelmetHairs;//[Size: 8]
+	ObjectProperty MatEyes;//[Size: 8]
+	ObjectProperty MatHairs;//[Size: 8]
+	ObjectProperty MatBeard;//[Size: 8]
+	ObjectProperty MatArrow;//[Size: 8]
+	ObjectProperty MatDressRoomModel;//[Size: 8]
+	ObjectProperty MatWings;//[Size: 8]
+	ObjectProperty MatGauntlet;//[Size: 8]
+	MapProperty MatGauntletArm;//[Size: 80]
+	ObjectProperty MatLastVFX;//[Size: 8]
+	ObjectProperty MatLastVFXDynamic;//[Size: 8]
+	ObjectProperty MatShirtDynamic;//[Size: 8]
+	ObjectProperty MatPantsDynamic;//[Size: 8]
+	ObjectProperty MatPantsShoesDynamic;//[Size: 8]
+	ObjectProperty MatHeadSkinDynamic;//[Size: 8]
+	ObjectProperty MatBodySkinDynamic;//[Size: 8]
+	ObjectProperty MatArmorDynamic;//[Size: 8]
+	ObjectProperty MatBootsDynamic;//[Size: 8]
+	ObjectProperty MatCoatDynamic;//[Size: 8]
+	MapProperty MatAxeDynamic;//[Size: 80]
+	ObjectProperty MatBowDynamic;//[Size: 8]
+	ObjectProperty MatHelmetDynamic;//[Size: 8]
+	ObjectProperty MatHelmetHairsDynamic;//[Size: 8]
+	ObjectProperty MatEyesDynamic;//[Size: 8]
+	ObjectProperty MatHairsDynamic;//[Size: 8]
+	ObjectProperty MatBeardDynamic;//[Size: 8]
+	ObjectProperty MatArrowDynamic;//[Size: 8]
+	ObjectProperty MatDressRoomModelDynamic;//[Size: 8]
+	ObjectProperty MatWingsDynamic;//[Size: 8]
+	ObjectProperty MatGauntletDynamic;//[Size: 8]
+	MapProperty MatGauntletArmDynamics;//[Size: 80]
+	StructProperty WingsActiveColor;//[Size: 12]
+	ObjectProperty MasterMesh;//[Size: 8]
+	ObjectProperty OtherMasterMesh;//[Size: 8]
+	ObjectProperty SkelShirtComponent;//[Size: 8]
+	ObjectProperty SkelPantsComponent;//[Size: 8]
+	ObjectProperty SkelSkinComponent;//[Size: 8]
+	ObjectProperty SkelArmorComponent;//[Size: 8]
+	ObjectProperty SkelBootsComponent;//[Size: 8]
+	ObjectProperty SkelCoatComponent;//[Size: 8]
+	ObjectProperty SkelAxeComponent;//[Size: 8]
+	ObjectProperty SkelBowComponent;//[Size: 8]
+	ObjectProperty SkelHelmetComponent;//[Size: 8]
+	ObjectProperty SkelHandsComponent;//[Size: 8]
+	ObjectProperty SkelHairsComponent;//[Size: 8]
+	ObjectProperty SkelBeardComponent;//[Size: 8]
+	ObjectProperty SkelArrowComponent;//[Size: 8]
+	ObjectProperty SkelNakedShirtComponent;//[Size: 8]
+	ObjectProperty SkelNakedPantsComponent;//[Size: 8]
+	ObjectProperty SkelNakedArmorComponent;//[Size: 8]
+	ObjectProperty SkelNakedShirtCensureComponent;//[Size: 8]
+	ObjectProperty SkelNakedPantsCensureComponent;//[Size: 8]
+	ObjectProperty AdditionalSkelMesh;//[Size: 8]
+	ObjectProperty AdditionalStaticMesh;//[Size: 8]
+	ObjectProperty SkelWingsComponent;//[Size: 8]
+	ObjectProperty SkelGauntletComponent;//[Size: 8]
+	ObjectProperty SkelGauntletArmComponent;//[Size: 8]
+	ClassProperty WingsAnimInstanceClass;//[Size: 8]
+	NameProperty WingsSocketName;//[Size: 8]
+	StructProperty DesiredWingsSocketOffset;//[Size: 12]
+	StructProperty DefaultWingsSocketOffset;//[Size: 12]
+	ClassProperty GauntletAnimInstanceClass;//[Size: 8]
+	ArrayProperty SkelMeshComponentArray;//[Size: 16]
+	ObjectProperty MatNakedBody;//[Size: 8]
+	ObjectProperty MatNakedBodyDynamic;//[Size: 8]
+	ObjectProperty MatNakedCensure;//[Size: 8]
+	ObjectProperty MatNakedCensureDynamic;//[Size: 8]
+	ObjectProperty MatNakedFlowers;//[Size: 8]
+	ObjectProperty MatNakedFlowersDynamic;//[Size: 8]
+	ObjectProperty MatNakedArmor;//[Size: 8]
+	ObjectProperty MatNakedArmorDynamic;//[Size: 8]
+	StructProperty CamoColor;//[Size: 12]
+	void UpdateVisibilty();// 0x81f4c0
+	void UpdateUsedCollection();// 0x81f430
+	void UpdateSkeletalMesh();// 0x81f410
+	void UpdateSkeletalIndex();// 0x81f350
+	void UpdateRenderCustomDepth();// 0x81f2c0
+	void UpdateOpacity();// 0x81f1f0
+	void UpdateNakedBodyOpacity();// 0x81f170
+	void UpdateModelVisibity();// 0x81f000
+	void UpdateMaterialIndex();// 0x81ef40
+	void UpdateCustomDepthStencilValue();// 0x81eec0
+	void UpdateCamoColor();// 0x81ee30
+	void UpdateAllIndexesFromModel();// 0x81edb0
+	void UpdateAllIndexes();// 0x81e750
+	void UnfreezeCharacter();// 0x81e6d0
+	void Undress();// 0x81e600
+	void SwapCoat();// 0x81e4f0
+	void SwapBootsAndPants();// 0x81e420
+	void SpawnIceShards();// 0x81e310
+	void SpawnAllIceShards();// 0x81e230
+	void SpawnAdditionalStaticMesh();// 0x81e170
+	void SpawnAdditionalSkelMesh();// 0x81e0b0
+	void ShowWings();// 0x81dff0
+	void ShowGauntletHand();// 0x81df60
+	void ShowGauntlet();// 0x81de00
+	void ShowCraftables();// 0x81dd30
+	void ShowCoat();// 0x81dca0
+	void ShowBow();// 0x81dc10
+	void ShowAxe();// 0x81db80
+	void ShowArrow();// 0x81daf0
+	void ShowArmor();// 0x81da60
+	void SetNeededModelMaterials();// 0x81da40
+	void SetModelMaterial();// 0x81d9c0
+	void SetGlassMaterial();// 0x81d960
+	void SetCamouflageMaterial();// 0x81d8e0
+	void SetAllModelMaterials();// 0x81d8c0
+	void ResetModelMaterials();// 0x81d8a0
+	void ResetMaterials();// 0x81d880
+	void ResetAllSkeletalMeshes();// 0x81d860
+	void RemovePouch();// 0x81d7e0
+	void PlayModelAnimations();// 0x81d7c0
+	void PauseModelAnimations();// 0x81d7a0
+	void MoveWings();// 0x81d710
+	void LoadCustomizationSavedData();// 0x81d6f0
+	void Initialize();// 0x81d620
+	void InitAllSkeletalMeshComponents();// 0x81d4b0
+	void GetCurrentFriendCustomization();// 0x81d3f0
+	void GetCurrentCustomization();// 0x81d360
+	void FreezeCharacter();// 0x81d2e0
+	void Dress();// 0x81d260
+	void DestroyAdditionalStaticMesh();// 0x81d240
+	void DestroyAdditionalSkelMesh();// 0x81d220
+	void CheckSkinVisibility();// 0x81d200
+	void ApplyWings();// 0x81d100
+	void ApplySkin();// 0x81cf80
+	void ApplyShirt();// 0x81ce80
+	void ApplyPants();// 0x81cd80
+	void ApplyHelmet();// 0x81cc80
+	void ApplyHairs();// 0x81cb80
+	void ApplyGauntlet();// 0x81ca40
+	void ApplyCoat();// 0x81c940
+	void ApplyBow();// 0x81c840
+	void ApplyBoots();// 0x81c740
+	void ApplyBeard();// 0x81c640
+	void ApplyAxe();// 0x81c540
+	void ApplyArrow();// 0x81c4c0
+	void ApplyArmor();// 0x81c3c0
+	void AddPouch();// 0x81c340
+	void AdaptToPassives();// 0x81c270
+	void ActivateAllSelectedIntensities();// 0x81c1a0
+
+--------------------------------
+Class: DefaultPhysicsVolume.PhysicsVolume.Volume.Brush.Actor.Object
+
+--------------------------------
+Class: PhysicsVolume.Volume.Brush.Actor.Object
+	FloatProperty TerminalVelocity;//[Size: 4]
+	IntProperty Priority;//[Size: 4]
+	FloatProperty FluidFriction;//[Size: 4]
+	BoolProperty bWaterVolume;//[Size: 1]
+	BoolProperty bPhysicsOnContact;//[Size: 1]
+
+--------------------------------
+Class: Volume.Brush.Actor.Object
+
+--------------------------------
+Class: Brush.Actor.Object
+	ByteProperty BrushType;//[Size: 1]
+	StructProperty BrushColor;//[Size: 4]
+	IntProperty PolyFlags;//[Size: 4]
+	BoolProperty bColored;//[Size: 1]
+	BoolProperty bSolidWhenSelected;//[Size: 1]
+	BoolProperty bPlaceableFromClassBrowser;//[Size: 1]
+	BoolProperty bNotForClientOrServer;//[Size: 1]
+	ObjectProperty Brush;//[Size: 8]
+	ObjectProperty BrushComponent;//[Size: 8]
+	BoolProperty bInManipulation;//[Size: 1]
+	ArrayProperty SavedSelections;//[Size: 16]
+
+--------------------------------
+Class: DarwinMainMenuGameModeBP_C.DarwinGameMode.GameMode.GameModeBase.Info.Actor.Object
+	ObjectProperty DefaultSceneRoot;//[Size: 8]
+
+--------------------------------
+Class: DarwinGameMode.GameMode.GameModeBase.Info.Actor.Object
+	ClassProperty CharacterHUDClass;//[Size: 8]
+	ClassProperty BeholderHUDClass;//[Size: 8]
+	ClassProperty ShowDirectorHUDClass;//[Size: 8]
+	ClassProperty DefaultDarwinCharacterClass;//[Size: 8]
+	ClassProperty DefaultDarwinDefenderClass;//[Size: 8]
+	ClassProperty DefaultDarwinShowDirectorClass;//[Size: 8]
+	ClassProperty DarwinDoodadClass;//[Size: 8]
+
+--------------------------------
+Class: GameMode.GameModeBase.Info.Actor.Object
+	NameProperty MatchState;//[Size: 8]
+	BoolProperty bDelayedStart;//[Size: 1]
+	IntProperty NumSpectators;//[Size: 4]
+	IntProperty NumPlayers;//[Size: 4]
+	IntProperty NumBots;//[Size: 4]
+	FloatProperty MinRespawnDelay;//[Size: 4]
+	IntProperty NumTravellingPlayers;//[Size: 4]
+	ClassProperty EngineMessageClass;//[Size: 8]
+	ArrayProperty InactivePlayerArray;//[Size: 16]
+	FloatProperty InactivePlayerStateLifeSpan;//[Size: 4]
+	IntProperty MaxInactivePlayers;//[Size: 4]
+	BoolProperty bHandleDedicatedServerReplays;//[Size: 1]
+	void StartMatch();// 0x1c136a0
+	void SetBandwidthLimit();// 0x1c12c20
+	void Say();// 0x1c12b80
+	void RestartGame();// 0x1c12a30
+	void ReadyToStartMatch();// 0x1c12a00
+	void ReadyToEndMatch();// 0x1c129d0
+	void K2_OnSetMatchState();// 0xb6a140
+	void IsMatchInProgress();// 0x1c12920
+	void HasMatchEnded();// 0x1c128f0
+	void GetMatchState();// 0x1c128d0
+	void EndMatch();// 0x1c128b0
+	void AbortMatch();// 0x1c12490
+
+--------------------------------
+Class: GameModeBase.Info.Actor.Object
+	StrProperty OptionsString;//[Size: 16]
+	ClassProperty GameSessionClass;//[Size: 8]
+	ClassProperty GameStateClass;//[Size: 8]
+	ClassProperty PlayerControllerClass;//[Size: 8]
+	ClassProperty PlayerStateClass;//[Size: 8]
+	ClassProperty HUDClass;//[Size: 8]
+	ClassProperty DefaultPawnClass;//[Size: 8]
+	ClassProperty SpectatorClass;//[Size: 8]
+	ClassProperty ReplaySpectatorPlayerControllerClass;//[Size: 8]
+	ClassProperty ServerStatReplicatorClass;//[Size: 8]
+	ObjectProperty GameSession;//[Size: 8]
+	ObjectProperty GameState;//[Size: 8]
+	ObjectProperty ServerStatReplicator;//[Size: 8]
+	TextProperty DefaultPlayerName;//[Size: 24]
+	BoolProperty bUseSeamlessTravel;//[Size: 1]
+	BoolProperty bStartPlayersAsSpectators;//[Size: 1]
+	BoolProperty bPauseable;//[Size: 1]
+	void StartPlay();// 0x1c1ff70
+	void SpawnDefaultPawnFor();// 0x1c1e1e0
+	void SpawnDefaultPawnAtTransform();// 0x1c1e0c0
+	void ShouldReset();// 0x1c1dbe0
+	void ReturnToMainMenuHost();// 0x1c1d070
+	void RestartPlayerAtTransform();// 0x1c1cf50
+	void RestartPlayerAtPlayerStart();// 0x1c1ce80
+	void RestartPlayer();// 0x1c1cdf0
+	void ResetLevel();// 0x1c1cdd0
+	void PlayerCanRestart();// 0x1c1c800
+	void MustSpectate();// 0x1c1b900
+	void K2_PostLogin();// 0xb6a140
+	void K2_OnSwapPlayerControllers();// 0xb6a140
+	void K2_OnRestartPlayer();// 0xb6a140
+	void K2_OnLogout();// 0xb6a140
+	void K2_OnChangeName();// 0xb6a140
+	void K2_FindPlayerStart();// 0x1c1afd0
+	void InitStartSpot();// 0x1c1ae80
+	void InitializeHUDForPlayer();// 0x84cb80
+	void HasMatchStarted();// 0x1c1ad10
+	void HandleStartingNewPlayer();// 0x89ace0
+	void GetNumSpectators();// 0x1c1a210
+	void GetNumPlayers();// 0x1c1a1e0
+	void GetDefaultPawnClassForController();// 0x1c19c20
+	void FindPlayerStart();// 0x1c190b0
+	void ChoosePlayerStart();// 0x1c184b0
+	void ChangeName();// 0x1c18390
+	void CanSpectate();// 0x1c182a0
+
+--------------------------------
+Class: DarwinGameSession.GameSession.Info.Actor.Object
+
+--------------------------------
+Class: GameSession.Info.Actor.Object
+	IntProperty MaxSpectators;//[Size: 4]
+	IntProperty MaxPlayers;//[Size: 4]
+	IntProperty MaxPartySize;//[Size: 4]
+	ByteProperty MaxSplitscreensPerConnection;//[Size: 1]
+	BoolProperty bRequiresPushToTalk;//[Size: 1]
+	NameProperty SessionName;//[Size: 8]
+
+--------------------------------
+Class: ParticleEventManager.Actor.Object
+
+--------------------------------
+Class: GameNetworkManager.Info.Actor.Object
+	IntProperty AdjustedNetSpeed;//[Size: 4]
+	FloatProperty LastNetSpeedUpdateTime;//[Size: 4]
+	IntProperty TotalNetBandwidth;//[Size: 4]
+	IntProperty MinDynamicBandwidth;//[Size: 4]
+	IntProperty MaxDynamicBandwidth;//[Size: 4]
+	BoolProperty bIsStandbyCheckingEnabled;//[Size: 1]
+	BoolProperty bHasStandbyCheatTriggered;//[Size: 1]
+	FloatProperty StandbyRxCheatTime;//[Size: 4]
+	FloatProperty StandbyTxCheatTime;//[Size: 4]
+	IntProperty BadPingThreshold;//[Size: 4]
+	FloatProperty PercentMissingForRxStandby;//[Size: 4]
+	FloatProperty PercentMissingForTxStandby;//[Size: 4]
+	FloatProperty PercentForBadPing;//[Size: 4]
+	FloatProperty JoinInProgressStandbyWaitTime;//[Size: 4]
+	FloatProperty MoveRepSize;//[Size: 4]
+	FloatProperty MAXPOSITIONERRORSQUARED;//[Size: 4]
+	FloatProperty MAXNEARZEROVELOCITYSQUARED;//[Size: 4]
+	FloatProperty CLIENTADJUSTUPDATECOST;//[Size: 4]
+	FloatProperty MAXCLIENTUPDATEINTERVAL;//[Size: 4]
+	FloatProperty MaxClientForcedUpdateDuration;//[Size: 4]
+	FloatProperty MaxMoveDeltaTime;//[Size: 4]
+	FloatProperty ClientNetSendMoveDeltaTime;//[Size: 4]
+	FloatProperty ClientNetSendMoveDeltaTimeThrottled;//[Size: 4]
+	FloatProperty ClientNetSendMoveDeltaTimeStationary;//[Size: 4]
+	IntProperty ClientNetSendMoveThrottleAtNetSpeed;//[Size: 4]
+	IntProperty ClientNetSendMoveThrottleOverPlayerCount;//[Size: 4]
+	BoolProperty ClientAuthorativePosition;//[Size: 1]
+	FloatProperty ClientErrorUpdateRateLimit;//[Size: 4]
+	BoolProperty bMovementTimeDiscrepancyDetection;//[Size: 1]
+	BoolProperty bMovementTimeDiscrepancyResolution;//[Size: 1]
+	FloatProperty MovementTimeDiscrepancyMaxTimeMargin;//[Size: 4]
+	FloatProperty MovementTimeDiscrepancyMinTimeMargin;//[Size: 4]
+	FloatProperty MovementTimeDiscrepancyResolutionRate;//[Size: 4]
+	FloatProperty MovementTimeDiscrepancyDriftAllowance;//[Size: 4]
+	BoolProperty bMovementTimeDiscrepancyForceCorrectionsDuringResolution;//[Size: 1]
+	BoolProperty bUseDistanceBasedRelevancy;//[Size: 1]
+
+--------------------------------
+Class: MainMenuMap_C.LevelScriptActor.Actor.Object
+	StructProperty UberGraphFrame;//[Size: 8]
+	void ReceiveBeginPlay(None(None) None);// 0xb6a140
+	void ExecuteUbergraph_MainMenuMap(None(None) None);// 0xb6a140
+	ObjectProperty MainMenu;//[Size: 8]
+
+--------------------------------
+Class: LevelScriptActor.Actor.Object
+	BoolProperty bInputEnabled;//[Size: 1]
+	void WorldOriginLocationChanged();// 0xb6a140
+	void SetCinematicMode();// 0x1c78110
+	void RemoteEvent();// 0x1c78070
+	void LevelReset();// 0xb6a140
+
+--------------------------------
+Class: DarwinGameStateGymBP_C.DarwinGameState.GameState.GameStateBase.Info.Actor.Object
+	StructProperty UberGraphFrame;//[Size: 8]
+	void UserConstructionScript(None(None) None);// 0xb6a140
+	void EventExecutePower(None(None) None);// 0xb6a140
+	void ExecuteUbergraph_DarwinGameStateGymBP(None(None) None);// 0xb6a140
+	ObjectProperty Ak_Gravity_Storm;//[Size: 8]
+	ObjectProperty DefaultSceneRoot;//[Size: 8]
+
+--------------------------------
+Class: DarwinGameState.GameState.GameStateBase.Info.Actor.Object
+	FloatProperty ColdMultiplier;//[Size: 4]
+	BoolProperty bBloodPactStartTogether;//[Size: 1]
+	FloatProperty ClueMultiplier;//[Size: 4]
+	FloatProperty ServerFPS;//[Size: 4]
+	FloatProperty SDSlomoTime;//[Size: 4]
+	FloatProperty GravityStormTime;//[Size: 4]
+	FloatProperty HecatombeTime;//[Size: 4]
+	FloatProperty LuauTime;//[Size: 4]
+	FloatProperty DoubleRainbowTime;//[Size: 4]
+	BoolProperty bFootstepsOn;//[Size: 1]
+	FloatProperty DarwinGameTime;//[Size: 4]
+	BoolProperty bGameEnded;//[Size: 1]
+	IntProperty MaxNumberOfPlayers;//[Size: 4]
+	IntProperty TeamCount;//[Size: 4]
+	IntProperty TeamPlayerCount;//[Size: 4]
+	IntProperty MinNumberOfPlayersForCustomMatch;//[Size: 4]
+	BoolProperty bAutoGameStartAtMax;//[Size: 1]
+	FloatProperty GameEndTimeBeforeRestart;//[Size: 4]
+	FloatProperty GameEndTimer;//[Size: 4]
+	BoolProperty bSuddenDeathActive;//[Size: 1]
+	FloatProperty SuddenDeathTime;//[Size: 4]
+	FloatProperty UltraSuddenDeathTime;//[Size: 4]
+	FloatProperty UltraSuddenDeathDenominator;//[Size: 4]
+	FloatProperty UltraSuddenDeathInterpSpeed;//[Size: 4]
+	FloatProperty UltraSuddenDeathRotationSpeed;//[Size: 4]
+	FloatProperty UltraSuddenDeathMovementRadius;//[Size: 4]
+	FloatProperty UltraSuddenDeathRotationTimer;//[Size: 4]
+	FloatProperty SuddenDeathTimer;//[Size: 4]
+	FloatProperty UltraSuddenDeathTimer;//[Size: 4]
+	BoolProperty bSuddenDeath;//[Size: 1]
+	ArrayProperty PlayerColorGradientArray;//[Size: 16]
+	ArrayProperty AllianceColorGradientArray;//[Size: 16]
+	StructProperty GrayGradient;//[Size: 32]
+	ArrayProperty AllianceColor;//[Size: 16]
+	StructProperty DarwinBlue;//[Size: 16]
+	StructProperty DarwinRed;//[Size: 16]
+	StructProperty DarwinYellow;//[Size: 16]
+	ClassProperty TestRessourceGeneratorClass;//[Size: 8]
+	StructProperty DarwinGreen;//[Size: 16]
+	StructProperty DarwinOrange;//[Size: 16]
+	StructProperty DarwinPurple;//[Size: 16]
+	StructProperty DarwinDeepBlue;//[Size: 16]
+	StructProperty DarwinBlack;//[Size: 16]
+	StructProperty DarwinGrey;//[Size: 16]
+	ArrayProperty TeamArray;//[Size: 16]
+	StructProperty DebugOptions;//[Size: 16]
+	ArrayProperty PlayerGroups;//[Size: 16]
+	ClassProperty TeamNodeClass;//[Size: 8]
+	ArrayProperty TeamNodeArray;//[Size: 16]
+	WeakObjectProperty ActiveShowDirector;//[Size: 8]
+	StrProperty ShowDirectorName;//[Size: 16]
+	IntProperty ShowDirectorUniqueId;//[Size: 4]
+	BoolProperty HasShowDirector;//[Size: 1]
+	ArrayProperty ActiveCharacters;//[Size: 16]
+	ArrayProperty ActiveBots;//[Size: 16]
+	ArrayProperty AIControllers;//[Size: 16]
+	ObjectProperty SDAIController;//[Size: 8]
+	ObjectProperty SpectatorAIController;//[Size: 8]
+	IntProperty NumberOfPlayersAtGameStart;//[Size: 4]
+	ArrayProperty GameStartArray;//[Size: 16]
+	ArrayProperty CharacterStartArray;//[Size: 16]
+	ObjectProperty ShowDirectorStart;//[Size: 8]
+	WeakObjectProperty WinnerCharacter;//[Size: 8]
+	ArrayProperty ActiveBeholders;//[Size: 16]
+	ArrayProperty ActiveRessources;//[Size: 16]
+	FloatProperty PureTreeProb;//[Size: 4]
+	ArrayProperty ActiveScrapPiles;//[Size: 16]
+	ArrayProperty ActiveCraftableTools;//[Size: 16]
+	ArrayProperty ActiveLoot;//[Size: 16]
+	ArrayProperty DeletedLootBoxes;//[Size: 16]
+	ArrayProperty ActiveHeatSourceComponents;//[Size: 16]
+	ArrayProperty ActiveHeatVolumes;//[Size: 16]
+	ArrayProperty ActiveNamedVolumes;//[Size: 16]
+	ArrayProperty ActiveCollisionBoxes;//[Size: 16]
+	ArrayProperty ActiveTechMushrooms;//[Size: 16]
+	BoolProperty bAITestCharactersOff;//[Size: 1]
+	BoolProperty bZombiesOn;//[Size: 1]
+	IntProperty MaxNbZombies;//[Size: 4]
+	ClassProperty DarwinZombieClass;//[Size: 8]
+	ArrayProperty ActiveZombies;//[Size: 16]
+	FloatProperty ZombieTime;//[Size: 4]
+	BoolProperty bAIDronesOn;//[Size: 1]
+	IntProperty MaxNbAIDrones;//[Size: 4]
+	ClassProperty DarwinAIDroneClass;//[Size: 8]
+	FloatProperty AIDroneTime;//[Size: 4]
+	ClassProperty DarwinDeerClass;//[Size: 8]
+	ArrayProperty ActiveAIDrones;//[Size: 16]
+	ArrayProperty ActiveDoodads;//[Size: 16]
+	StrProperty ClientVersion;//[Size: 16]
+	StrProperty ServerVersion;//[Size: 16]
+	ArrayProperty GameStateComponentArray;//[Size: 16]
+	ObjectProperty ZoneManager;//[Size: 8]
+	ObjectProperty PylonManager;//[Size: 8]
+	ObjectProperty AutoShowDirectorManager;//[Size: 8]
+	ObjectProperty GameplayAnalysisManager;//[Size: 8]
+	ObjectProperty GlobalEffectManager;//[Size: 8]
+	ObjectProperty SpawningManager;//[Size: 8]
+	ObjectProperty SpectatorPowerVoteManager;//[Size: 8]
+	ObjectProperty AuctionManager;//[Size: 8]
+	ObjectProperty GamblingManager;//[Size: 8]
+	ObjectProperty FlavorManager;//[Size: 8]
+	ObjectProperty TwitchEEEventManager;//[Size: 8]
+	ObjectProperty CollarPriceCurve;//[Size: 8]
+	FloatProperty CollarPriceIncreaseFactor;//[Size: 4]
+	IntProperty VotingTime;//[Size: 4]
+	FloatProperty ForceStartTimer;//[Size: 4]
+	BoolProperty bGameStarted;//[Size: 1]
+	BoolProperty InLobbyState;//[Size: 1]
+	BoolProperty bForceStarted;//[Size: 1]
+	FloatProperty AllPlayersInLobbyTimeBuffer;//[Size: 4]
+	BoolProperty bShowDirectorIsLoading;//[Size: 1]
+	ClassProperty EnvironmentManagerClass;//[Size: 8]
+	ObjectProperty EnvironmentManager;//[Size: 8]
+	ObjectProperty SpawnObjectManager;//[Size: 8]
+	ArrayProperty NewItems;//[Size: 16]
+	StructProperty ShowDirectorEndMatchRequest;//[Size: 48]
+	ArrayProperty PlayerReportList;//[Size: 16]
+	WeakObjectProperty PrivateMatchOwner;//[Size: 8]
+	BoolProperty bPrivateMatchOwnerConnected;//[Size: 1]
+	FloatProperty PrivateMatchTimeout;//[Size: 4]
+	FloatProperty PrivateMatchTimer;//[Size: 4]
+	ArrayProperty VISEncryptionID;//[Size: 16]
+	ArrayProperty VISRNArray;//[Size: 16]
+	ArrayProperty HostedStreamers;//[Size: 16]
+	ArrayProperty ActivePlayerArchetypeIds;//[Size: 16]
+	StructProperty ServerSessionActivationDetails;//[Size: 224]
+	ArrayProperty PlayerSessionActivationDetails;//[Size: 16]
+	BoolProperty bGraphicsParameterChange;//[Size: 1]
+	void UseTeamNodes();// 0x864da0
+	void RestartMap();// 0x864d80
+	void OnRepServerSessionActivationDetails();// 0x864d60
+	void OnRepNumberOfPlayersAtGameStart();// 0x864d40
+	void OnRepGameStarted();// 0x864d20
+	void OnRepActiveRessources();// 0x864d00
+	void OnRepActiveLoot();// 0x864ce0
+	void NetMulticastUpdateTeamPodiumRank();// 0x864b90
+	void NetMulticastStartUltraSuddenDeath();// 0x864b00
+	void NetMulticastStartSDSlomo();// 0x864ae0
+	void NetMulticastStartLuau();// 0x864ac0
+	void NetMulticastStartHecatombe();// 0x864aa0
+	void NetMulticastStartGravityStorm();// 0x864a80
+	void NetMulticastStartDoubleRainbow();// 0x864a60
+	void NetMulticastRemoveAllHolomaps();// 0x864a40
+	void NetmulticastRandomWeather();// 0x864c50
+	void NetMulticastOnGameStart();// 0x864a20
+	void NetMulticastNotifyCharacterDeath();// 0x8648d0
+	void NetMulticastExecutePower();// 0x8646e0
+	void NetMulticastDarwinFootstepsOn();// 0x864650
+	void NetMulticastCheckUltraSuddenDeathDrift();// 0x8645d0
+	void NetMulticastBroacastGameCountdownStartedEvent();// 0x8645b0
+	void NetMulticastAdvertiseWinner();// 0x8644b0
+	void IsSDSlomoOn();// 0x864480
+	void IsLuauOn();// 0x864450
+	void IsInLobbyState();// 0x864420
+	void IsHecatombeOn();// 0x8643f0
+	void IsGravityStormOn();// 0x8643c0
+	void IsDoubleRainbowOn();// 0x864390
+	void GetLocalCharacter();// 0x864360
+	void GetLocalCameraUpVector();// 0x864320
+	void GetLocalCameraLocation();// 0x8642e0
+	void GetLocalCameraIsInLobby();// 0x8642b0
+	void GetLocalCameraDirection();// 0x864270
+	void GetElapsedTimeSinceCountdown();// 0x864240
+	void GetDarwinGameType();// 0x864220
+	void GetDarwinGameMode();// 0x864200
+	void EventTeleportedAtStartPosition();// 0xb6a140
+	void EventGameStarted();// 0xb6a140
+	void EventGameCountdownStarted();// 0xb6a140
+	void EventExecutePower();// 0xb6a140
+	void EndTutorial();// 0x864180
+	void BuyItem();// 0x836a70
+
+--------------------------------
+Class: GameState.GameStateBase.Info.Actor.Object
+	NameProperty MatchState;//[Size: 8]
+	NameProperty PreviousMatchState;//[Size: 8]
+	IntProperty ElapsedTime;//[Size: 4]
+	void OnRep_MatchState();// 0x1c1cdd0
+	void OnRep_ElapsedTime();// 0x1c1d070
+
+--------------------------------
+Class: GameStateBase.Info.Actor.Object
+	ClassProperty GameModeClass;//[Size: 8]
+	ObjectProperty AuthorityGameMode;//[Size: 8]
+	ClassProperty SpectatorClass;//[Size: 8]
+	ArrayProperty PlayerArray;//[Size: 16]
+	BoolProperty bReplicatedHasBegunPlay;//[Size: 1]
+	FloatProperty ReplicatedWorldTimeSeconds;//[Size: 4]
+	FloatProperty ServerWorldTimeSecondsDelta;//[Size: 4]
+	FloatProperty ServerWorldTimeSecondsUpdateFrequency;//[Size: 4]
+	void OnRep_SpectatorClass();// 0x243b60
+	void OnRep_ReplicatedWorldTimeSeconds();// 0x1c233a0
+	void OnRep_ReplicatedHasBegunPlay();// 0x852f20
+	void OnRep_GameModeClass();// 0x89f000
+	void HasMatchStarted();// 0x1c23190
+	void HasBegunPlay();// 0x1c23160
+	void GetServerWorldTimeSeconds();// 0x1c23090
+	void GetPlayerStartTime();// 0x1c22bd0
+	void GetPlayerRespawnDelay();// 0x1c22b30
+
+--------------------------------
+Class: AbstractNavData.NavigationData.Actor.Object
+
+--------------------------------
+Class: NavigationData.Actor.Object
+	ObjectProperty RenderingComp;//[Size: 8]
+	StructProperty NavDataConfig;//[Size: 104]
+	BoolProperty bEnableDrawing;//[Size: 1]
+	BoolProperty bForceRebuildOnLoad;//[Size: 1]
+	BoolProperty bCanBeMainNavData;//[Size: 1]
+	BoolProperty bCanSpawnOnRebuild;//[Size: 1]
+	BoolProperty bRebuildAtRuntime;//[Size: 1]
+	EnumProperty RuntimeGeneration;//[Size: 1]
+	FloatProperty ObservedPathsTickInterval;//[Size: 4]
+	UInt32Property DataVersion;//[Size: 4]
+	ArrayProperty SupportedAreas;//[Size: 16]
+
+--------------------------------
+Class: DarwinControllerBP_C.DarwinController.PlayerController.Controller.Actor.Object
+	StructProperty UberGraphFrame;//[Size: 8]
+	void UserConstructionScript(None(None) None);// 0xb6a140
+	void ReceiveBeginPlay(None(None) None);// 0xb6a140
+	void PlayVlog(None(None) None);// 0xb6a140
+	void StopVlog(None(None) None);// 0xb6a140
+	void ExecuteUbergraph_DarwinControllerBP(None(None) None);// 0xb6a140
+	ObjectProperty AnouncementPlayer;//[Size: 8]
+
+--------------------------------
+Class: DarwinController.PlayerController.Controller.Actor.Object
+	FloatProperty MenuInputFirstLoopDuration;//[Size: 4]
+	FloatProperty MenuInputLoopDuration;//[Size: 4]
+	FloatProperty GamepadMaxDeadZone;//[Size: 4]
+	FloatProperty MenuStickDeadZone;//[Size: 4]
+	StructProperty GamepadLeftStickDirection;//[Size: 8]
+	FloatProperty GamepadLeftStickLength;//[Size: 4]
+	FloatProperty GamepadLeftStick2DAngle;//[Size: 4]
+	BoolProperty bUseMouse;//[Size: 1]
+	BoolProperty bLeftMouseDown;//[Size: 1]
+	BoolProperty bRightMouseDown;//[Size: 1]
+	StrProperty NetID;//[Size: 16]
+	IntProperty OnlineId;//[Size: 4]
+	StrProperty SessionSlotId;//[Size: 16]
+	ObjectProperty LocalAvatarTexture;//[Size: 8]
+	IntProperty DefaultVideoQuality;//[Size: 4]
+	IntProperty VideoQuality;//[Size: 4]
+	ClassProperty AkAudioComponentClass;//[Size: 8]
+	ObjectProperty DarwinPlayerCameraManager;//[Size: 8]
+	ObjectProperty MasterSoundClass;//[Size: 8]
+	ArrayProperty InstancedForceFeedback;//[Size: 16]
+	ArrayProperty RefForceFeedback;//[Size: 16]
+	ClassProperty DarwinDoodadClass;//[Size: 8]
+	ClassProperty ScreendicatorManagerClass;//[Size: 8]
+	ClassProperty SpectatorAIComponentClass;//[Size: 8]
+	ClassProperty FoliageComponentClass;//[Size: 8]
+	ClassProperty PostProcessComponentClass;//[Size: 8]
+	ClassProperty StormParticleSubActorClass;//[Size: 8]
+	ClassProperty ParticleManagerClass;//[Size: 8]
+	ClassProperty JerichoCollectionClass;//[Size: 8]
+	ObjectProperty JerichoCollection;//[Size: 8]
+	ClassProperty ArtemisCollectionClass;//[Size: 8]
+	ObjectProperty ArtemisCollection;//[Size: 8]
+	ClassProperty CharacterCloneClass;//[Size: 8]
+	ObjectProperty DarwinStart;//[Size: 8]
+	StrProperty StartInfoString;//[Size: 16]
+	IntProperty FakeEditorSDNumGames;//[Size: 4]
+	IntProperty FakeEditorSDFame;//[Size: 4]
+	IntProperty FakeEditorPlayerLevel;//[Size: 4]
+	EnumProperty Platform;//[Size: 1]
+	ObjectProperty DeadCharacter;//[Size: 8]
+	void XXXXInitiateAllNuclearBlast();// 0x83e880
+	void XtroMode();// 0x83e8a0
+	void UsePostProcessZone();// 0x83e7f0
+	void UsePostProcessWarmth();// 0x83e760
+	void UsePostProcessStamina();// 0x83e6d0
+	void UsePostProcessSnowBall();// 0x83e640
+	void UsePostProcessNuclear();// 0x83e5b0
+	void UsePostProcessLavaZone();// 0x83e520
+	void UsePostProcessIce();// 0x83e490
+	void UsePostProcessHighlighter();// 0x83e400
+	void UsePostProcessHecatombe();// 0x83e370
+	void UsePostProcessGlitch();// 0x83e2e0
+	void UsePostProcessDoubleRainbow();// 0x83e250
+	void UsePostProcessDamage();// 0x83e1c0
+	void UsePostProcessBlackAndWhite();// 0x83e130
+	void UsePostProcessBeachParty();// 0x83e0a0
+	void UpdateWidgetTickInterval();// 0x83e020
+	void UpdateStreamingPoolSize();// 0x83dfa0
+	void UpdateModelVisibility();// 0x83df10
+	void UpdateCaptureModelVisibity();// 0x83dda0
+	void UpdateCaptureModel();// 0x83dca0
+	void Unstuck();// 0x83dc80
+	void UnleashDirector();// 0x83dc60
+	void UndressEveryBody();// 0x83db90
+	void TurnAIOff();// 0x83db70
+	void TogglePhysFlyingJetPack();// 0x83db50
+	void ToggleNormalCameraDistance();// 0x83db30
+	void ToggleInputModeDebug();// 0x83db10
+	void ToggleGameplayOption();// 0x83da90
+	void ToggleDebugOption();// 0x83da10
+	void ToggleCamStateFarPlayer();// 0x83d9f0
+	void SwitchGender();// 0x83d9d0
+	void SuddenDeathMode();// 0x83d9b0
+	void StopModelCapture();// 0x83d990
+	void StopMatchmaking();// 0x83d970
+	void StopEnvironmentTime();// 0x83d950
+	void StopCaptureModelAnim();// 0x83d8d0
+	void StartVoteDebug();// 0x83d800
+	void StartVoteCountdown();// 0x83d770
+	void StartStorm();// 0x83d6f0
+	void StartModelCapture();// 0x83d6d0
+	void StartMatchmaking();// 0x83d4e0
+	void StartGame();// 0x83d4c0
+	void StartEnvironmentTime();// 0x83d4a0
+	void StartCaptureModelAnim();// 0x83d480
+	void SpawnTestSD();// 0x83d460
+	void SpawnTestCharacter();// 0x83d3a0
+	void SpawnTestBeholder();// 0x83d380
+	void SpawnRandomDoodad();// 0x83d360
+	void SpawnOneTestCharacter();// 0x83d340
+	void SpawnLocalCharacterClone();// 0x83d2b0
+	void SpawnDoodad();// 0x83d1f0
+	void SimulateApplicationResumed();// 0x83d1d0
+	void ShowWings();// 0x83d100
+	void ShowPingAndVersion();// 0x83d070
+	void ShowNakedBody();// 0x83cfa0
+	void ShowLoadingScreen();// 0x83cf80
+	void ShowGauntlets();// 0x83ce80
+	void ShowGauntlet();// 0x83cdf0
+	void SetWeaponLevel();// 0x83cd70
+	void SetShortFootPrintLifeSpan();// 0x83cd50
+	void SetPlayerLocation();// 0x83cc40
+	void SetNumberOfPylonsOnGameStart();// 0x83cbc0
+	void SetMousePosition();// 0x83cb00
+	void SetGameplayGliderManClassOption();// 0x83ca40
+	void SetGameplayFloatOption();// 0x83c980
+	void SetGameModeToVsAI();// 0x3f4d20
+	void SetEnvironmentTime();// 0x83c900
+	void SetDeerNumber();// 0x83c880
+	void SetDebugOption();// 0x83c7b0
+	void SetDarwinVoiceChatVolume();// 0x83c730
+	void SetDarwinSoundClassVolumeVOAnnouncer();// 0x83c6b0
+	void SetDarwinSoundClassVolumeVO();// 0x83c630
+	void SetDarwinSoundClassVolumeMusic();// 0x83c5b0
+	void SetDarwinSoundClassVolumeFX();// 0x83c530
+	void SetDarwinSoundClassVolume();// 0x83c4b0
+	void SetColdMultiplier();// 0x83c430
+	void SetCoatLevel();// 0x83c3b0
+	void SetClueMultiplier();// 0x83c330
+	void SetCaptureModelAnim();// 0x83c2b0
+	void SetBootLevel();// 0x83c230
+	void SetBloodPactStartTogether();// 0x83c1a0
+	void SetAuroraIntensity();// 0x83c120
+	void SetAllWeaponType();// 0x83c0a0
+	void SetAllWeaponLevel();// 0x83c020
+	void SetAllModelMaterials();// 0x83c000
+	void SetAllItemsActivated();// 0x83bf70
+	void SetAllArrowType();// 0x83bef0
+	void ServerXtroMode();// 0x83bea0
+	void ServerUnleashDirector();// 0x83be50
+	void ServerTurnAIOff();// 0x83be00
+	void ServerToggleGameplayOption();// 0x83bd50
+	void ServerToggleDebugOption();// 0x83bca0
+	void ServerSwitchGender();// 0x83bc50
+	void ServerSuddenDeathMode();// 0x83bc00
+	void ServerStartGame();// 0x83bbb0
+	void ServerSpawnTestSD();// 0x83bb60
+	void ServerSpawnTestBeholder();// 0x83bb10
+	void ServerSpawnDoodad();// 0x83ba10
+	void ServerSpawnBot();// 0x83b910
+	void ServerSlomo();// 0x83b860
+	void ServerSetWeaponLevel();// 0x83b7a0
+	void ServerSetShortFootPrintLifeSpan();// 0x83b750
+	void ServerSetPlayerLocation();// 0x83b680
+	void ServerSetNumberOfPylonsOnGameStart();// 0x83b5c0
+	void ServerSetGameplayGliderManClassOption();// 0x83b4c0
+	void ServerSetGameplayFloatOption();// 0x83b3c0
+	void ServerSetDeerNumber();// 0x83b300
+	void ServerSetDebugOption();// 0x83b200
+	void ServerSetColdMultiplier();// 0x83b100
+	void ServerSetCoatLevel();// 0x83b040
+	void ServerSetClueMultiplier();// 0x83af90
+	void ServerSetBootLevel();// 0x83aed0
+	void ServerSetBloodPactStartTogether();// 0x83ae10
+	void ServerSetAllWeaponType();// 0x83ad60
+	void ServerSetAllWeaponLevel();// 0x83aca0
+	void ServerSetAllArrowType();// 0x83abf0
+	void ServerRestartMap();// 0x83aba0
+	void ServerRequestXboxSession();// 0x83ab50
+	void ServerReportPlayer();// 0x83a8e0
+	void ServerRemoveTestCharacter();// 0x83a820
+	void ServerRemoveAllHolomaps();// 0x83a7d0
+	void ServerPrivateMatchStartGameWithAI();// 0x83a780
+	void ServerPlayerCastVote();// 0x83a6c0
+	void ServerOpenZone();// 0x83a3c0
+	void ServerOnJoinXboxSessionComplete();// 0x83a300
+	void ServerOnArbiterSessionReady();// 0x83a1f0
+	void ServerOnArbiterReservePlayersComplete();// 0x83a0b0
+	void ServerMakeGameRindamWhool();// 0x83a060
+	void ServerMakeGameRandomWheel();// 0x83a010
+	void ServerMakeGamePrivate();// 0x839fc0
+	void ServerMakeGameBloodPact();// 0x839f70
+	void ServerMakeGameBattleRoyale();// 0x839e70
+	void ServerKillPlayer();// 0x839db0
+	void ServerKickPlayer();// 0x839c30
+	void ServerInitiateNuclearBlast();// 0x839b70
+	void ServerInitiateManHunt();// 0x839ab0
+	void ServerInitiateGravityStorm();// 0x839a60
+	void ServerInitiateAllNuclearBlast();// 0x839a10
+	void ServerHonorShowDirector();// 0x839910
+	void ServerHardRestart();// 0x8398c0
+	void ServerGotoRole();// 0x8397a0
+	void ServerGotoLevel();// 0x8396e0
+	void ServerGotoDeadPlayerBeholder();// 0x8395c0
+	void ServerGiveWood();// 0x839500
+	void ServerGiveScrap();// 0x839440
+	void ServerGiveRessource();// 0x839380
+	void ServerGiveLeather();// 0x8392c0
+	void ServerGiveElectronic();// 0x839200
+	void ServerGiveEasterEggs();// 0x839140
+	void ServerFullInventory();// 0x8390f0
+	void ServerForceSuddenDeath();// 0x839030
+	void ServerExecuteSpectatorPower();// 0x838f30
+	void ServerExecutePower();// 0x838db0
+	void ServerDeathMatchDemoMode();// 0x838d10
+	void ServerDeactivateZoneManager();// 0x838cc0
+	void ServerDarwinServerCommand();// 0x838c00
+	void ServerDarwinFootstepsOn();// 0x838b40
+	void ServerDarwinCluesOn();// 0x838a80
+	void ServerCustomMatchStartGame();// 0x838a30
+	void ServerCloseZone();// 0x838920
+	void ServerClientMapLoadingFinished();// 0x8388d0
+	void ServerAIToggleShoot();// 0x8385a0
+	void ServerAIToggleRun();// 0x838550
+	void ServerAIToggleJump();// 0x838500
+	void ServerAIToggleHarvest();// 0x8384b0
+	void ServerAIToggleForcefield();// 0x838460
+	void ServerAIToggleCraftWheel();// 0x838410
+	void ServerAIToggleCamouflage();// 0x8383c0
+	void ServerAIToggleAxeSwing();// 0x838370
+	void ServerAIThrowGrenade();// 0x8382c0
+	void ServerActivateSpectatorAI();// 0x838810
+	void ServerActivateShowDirectorAI();// 0x838750
+	void ServerActivateRandomPylon();// 0x838700
+	void ServerActivatePylon();// 0x838640
+	void ServerActivateAllPylons();// 0x8385f0
+	void RestartMap();// 0x8382a0
+	void ResetItemIds();// 0x3f4d20
+	void RemoveTestCharacter();// 0x838220
+	void RemoveAllLootBoxes();// 0x3f4d20
+	void RemoveAllItems();// 0x3f4d20
+	void RemoveAllHolomaps();// 0x838200
+	void RefillInventoryFull();// 0x8381e0
+	void QuickShowDirectorTest();// 0x8381c0
+	void PressAllTraits();// 0x8381a0
+	void PlayerQuestsUpdatedEvent();// 0x838180
+	void PlayerQuestsUpdate();// 0x838070
+	void PlayerQuestsAddActivationMessage();// 0x837fb0
+	void OptimizeTickInterval();// 0x837e40
+	void OpenZone();// 0x837dc0
+	void NetMulticastHardRestart();// 0x837990
+	void MakeGameRindamWhool();// 0x3f4d20
+	void MakeGameRandomWheel();// 0x3f4d20
+	void MakeGamePrivate();// 0x837830
+	void MakeGameBloodPact();// 0x837810
+	void MakeGameBattleRoyale();// 0x837750
+	void ListenNextInput();// 0x837730
+	void Krash();// 0x837710
+	void KillPlayer();// 0x837690
+	void KillAllPlayers();// 0x837670
+	void IsVIS();// 0x837640
+	void IsSuperUser();// 0x8375b0
+	void InShowDirector();// 0x837400
+	void InPurgatory();// 0x8373d0
+	void InitModel();// 0x837470
+	void InitiateNuclearBlast();// 0x837530
+	void InitiateManHunt();// 0x8374b0
+	void InitiateGravityStorm();// 0x837490
+	void InitCaptureModel();// 0x837450
+	void InitCaptureFModelromCustomization();// 0x837430
+	void InCharacter();// 0x8373a0
+	void InBeholder();// 0x837370
+	void HideLoadingScreen();// 0x837350
+	void HideCaptureModel();// 0x837330
+	void HardRestart();// 0x837310
+	void GotoSupporter();// 0x8372f0
+	void GotoSpectator();// 0x8372d0
+	void GotoShowDirector();// 0x8372b0
+	void GotoRoleDirect();// 0x837230
+	void GotoRole();// 0x837130
+	void GotoPurgatory();// 0x837110
+	void GotoPlayer();// 0x8370f0
+	void GotoLevel();// 0x837050
+	void GotoInvader();// 0x837030
+	void GotoHero();// 0x837010
+	void GotoDeadPlayerBeholder();// 0x836f00
+	void GoToCaptureCamera();// 0x836d90
+	void GotoCaptainDarwin();// 0x836ee0
+	void GotoCaptain();// 0x836ec0
+	void GotoBeholder();// 0x836ea0
+	void GiveWood();// 0x836d10
+	void GiveScrap();// 0x836c90
+	void GiveRessourceDirect();// 0x836c70
+	void GiveRessource();// 0x836bf0
+	void GiveOneWood();// 0x836bd0
+	void GiveOneScrap();// 0x836bb0
+	void GiveOneLeather();// 0x836b90
+	void GiveOneElectronic();// 0x836b70
+	void GiveMoney();// 0x836a70
+	void GiveLootBox();// 0x836a70
+	void GiveLeather();// 0x836af0
+	void GiveItem();// 0x836a70
+	void GiveElectronic();// 0x8369f0
+	void GiveEasterEggs();// 0x836970
+	void GiveArrows();// 0x836950
+	void GiveAllItems();// 0x3f4d20
+	void GetProfile();// 0x836930
+	void GenerateRandomName();// 0x8368b0
+	void GenerateMapTest();// 0x8367f0
+	void GameplayItemTypeUnlock();// 0x836770
+	void ForceSuddenDeath();// 0x8366f0
+	void ForceNakedCamouflage();// 0x836660
+	void FollowBeholder();// 0x8365c0
+	void FillZoneWithLava();// 0x836540
+	void FeatureUnlock();// 0x8364c0
+	void FeatureLock();// 0x836440
+	void FakeWinNewPog();// 0x8363c0
+	void ExecuteSpectatorPower();// 0x836300
+	void ExecuteSDPower();// 0x836240
+	void DressEveryBody();// 0x8361c0
+	void DrawActivePlayers();// 0x8361a0
+	void DrawActiveHeatSourceComponents();// 0x836180
+	void DrawActiveFootprints();// 0x836160
+	void DebugGotoToNextGameStart();// 0x836120
+	void DeathMatchDemoMode();// 0x836100
+	void DeactivateZoneManager();// 0x8360e0
+	void DeactivateTreeOutliner();// 0x8360c0
+	void DeactivatePylonManager();// 0x8360a0
+	void DeactivateFootprints();// 0x836080
+	void DeactivateAllUI();// 0x836060
+	void DeactivateAllForCapture();// 0x836040
+	void DarwinVideoSettings();// 0x835fc0
+	void DarwinSlomo();// 0x835f40
+	void DarwinServerCommand();// 0x835ea0
+	void DarwinForceFeedback();// 0x835d90
+	void DarwinFootstepsOn();// 0x835d00
+	void DarwinCluesOn();// 0x835c70
+	void CustomGameApplyPreset();// 0x835bf0
+	void CrashPlease();// 0x835bd0
+	void Crash();// 0x835bd0
+	void CloseZone();// 0x835b50
+	void CloseRandomZone();// 0x835b30
+	void ClientStopGameCountdown();// 0x835b10
+	void ClientStatUpdated();// 0x835980
+	void ClientStartOnlineGame();// 0x835960
+	void ClientStartGameCountdown();// 0x835940
+	void ClientShowDirectorHonorReceived();// 0x835880
+	void ClientSetServerGUID();// 0x8357e0
+	void ClientSetPurgatoryInputModeAndMouse();// 0x8357c0
+	void ClientSetInputDirection();// 0x8356c0
+	void ClientSetCharacterInputModeAndMouse();// 0x835640
+	void ClientSetCameraManager();// 0x8355b0
+	void ClientRegenerateXboxSession();// 0x835590
+	void ClientMessageFromSpectator();// 0x8354b0
+	void ClientJoinXboxSession();// 0x835410
+	void ClientEndOnlineGame();// 0x8353f0
+	void ClientEndGameStatsReady();// 0x835100
+	void ClientCreateArbiterSession();// 0x8350e0
+	void ClientCheckArbiter();// 0x8350c0
+	void ClientArbiterReservePlayers();// 0x835000
+	void ChooseChampion();// 0x834f80
+	void ApplyXboxOneSettings();// 0x834f60
+	void ApplyViewDistanceQuality();// 0x834ee0
+	void ApplyTextureQuality();// 0x834e60
+	void ApplySSRQuality();// 0x834ca0
+	void ApplyShirt();// 0x834da0
+	void ApplyShadowQuality();// 0x834d20
+	void ApplyPostProcessQuality();// 0x834c20
+	void ApplyNvidiaParameters();// 0x834ab0
+	void ApplyMotionBlur();// 0x8349f0
+	void ApplyLPVQuality();// 0x8348e0
+	void ApplyLensFlare();// 0x834960
+	void ApplyInputSettings();// 0x8348c0
+	void ApplyFoliageQuality();// 0x834840
+	void ApplyEffectsQuality();// 0x8347c0
+	void ApplyDOF();// 0x834730
+	void ApplyAOQuality();// 0x8346b0
+	void ApplyAAQuality();// 0x834630
+	void AIToggleShoot();// 0x834270
+	void AIToggleRun();// 0x834250
+	void AIToggleJump();// 0x834230
+	void AIToggleHarvest();// 0x834210
+	void AIToggleForcefield();// 0x8341f0
+	void AIToggleCraftWheel();// 0x8341d0
+	void AIToggleCamouflage();// 0x8341b0
+	void AIToggleAxeSwing();// 0x834190
+	void AIThrowGrenade();// 0x834110
+	void AddIngameMessage();// 0x8345b0
+	void ActivateStadiumHola();// 0x8344f0
+	void ActivateSpectatorAI();// 0x8344d0
+	void ActivateShowDirectorAI();// 0x8344b0
+	void ActivateSDAI();// 0x834350
+	void ActivateRandomPylon();// 0x834330
+	void ActivatePylon();// 0x8342b0
+	void ActivateAllPylons();// 0x834290
+
+--------------------------------
+Class: PlayerController.Controller.Actor.Object
+	ObjectProperty Player;//[Size: 8]
+	ObjectProperty AcknowledgedPawn;//[Size: 8]
+	ObjectProperty ControllingDirTrackInst;//[Size: 8]
+	ObjectProperty MyHUD;//[Size: 8]
+	ObjectProperty PlayerCameraManager;//[Size: 8]
+	ClassProperty PlayerCameraManagerClass;//[Size: 8]
+	BoolProperty bAutoManageActiveCameraTarget;//[Size: 1]
+	StructProperty TargetViewRotation;//[Size: 12]
+	FloatProperty SmoothTargetViewRotationSpeed;//[Size: 4]
+	ArrayProperty HiddenActors;//[Size: 16]
+	ArrayProperty HiddenPrimitiveComponents;//[Size: 16]
+	FloatProperty LastSpectatorStateSynchTime;//[Size: 4]
+	StructProperty LastSpectatorSyncLocation;//[Size: 12]
+	StructProperty LastSpectatorSyncRotation;//[Size: 12]
+	IntProperty ClientCap;//[Size: 4]
+	ObjectProperty CheatManager;//[Size: 8]
+	ClassProperty CheatClass;//[Size: 8]
+	ObjectProperty PlayerInput;//[Size: 8]
+	ArrayProperty ActiveForceFeedbackEffects;//[Size: 16]
+	BoolProperty bPlayerIsWaiting;//[Size: 1]
+	ByteProperty NetPlayerIndex;//[Size: 1]
+	ObjectProperty PendingSwapConnection;//[Size: 8]
+	ObjectProperty NetConnection;//[Size: 8]
+	FloatProperty InputYawScale;//[Size: 4]
+	FloatProperty InputPitchScale;//[Size: 4]
+	FloatProperty InputRollScale;//[Size: 4]
+	BoolProperty bShowMouseCursor;//[Size: 1]
+	BoolProperty bEnableClickEvents;//[Size: 1]
+	BoolProperty bEnableTouchEvents;//[Size: 1]
+	BoolProperty bEnableMouseOverEvents;//[Size: 1]
+	BoolProperty bEnableTouchOverEvents;//[Size: 1]
+	BoolProperty bForceFeedbackEnabled;//[Size: 1]
+	FloatProperty ForceFeedbackScale;//[Size: 4]
+	ArrayProperty ClickEventKeys;//[Size: 16]
+	ByteProperty DefaultMouseCursor;//[Size: 1]
+	ByteProperty CurrentMouseCursor;//[Size: 1]
+	ByteProperty DefaultClickTraceChannel;//[Size: 1]
+	ByteProperty CurrentClickTraceChannel;//[Size: 1]
+	FloatProperty HitResultTraceDistance;//[Size: 4]
+	UInt16Property SeamlessTravelCount;//[Size: 2]
+	UInt16Property LastCompletedSeamlessTravelCount;//[Size: 2]
+	EnumProperty CurrentInputMode;//[Size: 1]
+	ObjectProperty InactiveStateInputComponent;//[Size: 8]
+	BoolProperty bShouldPerformFullTickWhenPaused;//[Size: 1]
+	ObjectProperty CurrentTouchInterface;//[Size: 8]
+	ObjectProperty SpectatorPawn;//[Size: 8]
+	BoolProperty bIsLocalPlayerController;//[Size: 1]
+	StructProperty SpawnLocation;//[Size: 12]
+	void WasInputKeyJustReleased();// 0x1cb7440
+	void WasInputKeyJustPressed();// 0x1cb7350
+	void ToggleSpeaking();// 0x1cb72c0
+	void SwitchLevel();// 0x1cb7220
+	void StopHapticEffect();// 0x1cb71a0
+	void StartFire();// 0x1cb7120
+	void SetVirtualJoystickVisibility();// 0x1cb7090
+	void SetViewTargetWithBlend();// 0x1cb6f10
+	void SetShowMouseCursor();// 0x1cb6e80
+	void SetName();// 0x1cb6de0
+	void SetMouseLocation();// 0x1cb6d20
+	void SetMouseCursorWidget();// 0x1cb6c60
+	void SetHapticsByValue();// 0x1cb6b60
+	void SetDisableHaptics();// 0x1cb6ad0
+	void SetControllerLightColor();// 0x1cb6a60
+	void SetCinematicMode();// 0x1cb68a0
+	void SetAudioListenerOverride();// 0x1cb6780
+	void SetAudioListenerAttenuationOverride();// 0x1cb66b0
+	void ServerViewSelf();// 0x1cb6580
+	void ServerViewPrevPlayer();// 0x1cb6530
+	void ServerViewNextPlayer();// 0x1cb64e0
+	void ServerVerifyViewTarget();// 0x1cb6490
+	void ServerUpdateMultipleLevelsVisibility();// 0x1cb63d0
+	void ServerUpdateLevelVisibility();// 0x1cb62e0
+	void ServerUpdateCamera();// 0x1cb61c0
+	void ServerUnmutePlayer();// 0x1cb6050
+	void ServerToggleAILogging();// 0x1cb6000
+	void ServerShortTimeout();// 0x1cb5fb0
+	void ServerSetSpectatorWaiting();// 0x1cb5ef0
+	void ServerSetSpectatorLocation();// 0x1cb5dc0
+	void ServerRestartPlayer();// 0x1cb5d70
+	void ServerPause();// 0x1cb5d20
+	void ServerNotifyLoadedWorld();// 0x1cb5c70
+	void ServerMutePlayer();// 0x1cb5b00
+	void ServerCheckClientPossessionReliable();// 0x1cb5ab0
+	void ServerCheckClientPossession();// 0x1cb5a60
+	void ServerChangeName();// 0x1cb59a0
+	void ServerCamera();// 0x1cb58e0
+	void ServerAcknowledgePossession();// 0x1cb5820
+	void SendToConsole();// 0x1cb5780
+	void RestartLevel();// 0x1cb5760
+	void ProjectWorldLocationToScreen();// 0x1cb5630
+	void PlayHapticEffect();// 0x1cb54e0
+	void PlayDynamicForceFeedback();// 0x1cb5250
+	void Pause();// 0x1cb5230
+	void OnServerStartedVisualLogger();// 0x1cb51a0
+	void LocalTravel();// 0x1cb5100
+	void IsInputKeyDown();// 0x1cb5010
+	void GetViewportSize();// 0x1cb4f30
+	void GetSpectatorPawn();// 0x1cb4f10
+	void GetMousePosition();// 0x1cb4e20
+	void GetInputVectorKeyState();// 0x1cb4d20
+	void GetInputTouchState();// 0x1cb4ba0
+	void GetInputMouseDelta();// 0x1cb4ac0
+	void GetInputMotionState();// 0x1cb4930
+	void GetInputKeyTimeDown();// 0x1cb4840
+	void GetInputAnalogStickState();// 0x1cb4720
+	void GetInputAnalogKeyState();// 0x1cb4630
+	void GetHUD();// 0x1cb3cc0
+	void GetHitResultUnderFingerForObjects();// 0x1cb4470
+	void GetHitResultUnderFingerByChannel();// 0x1cb42d0
+	void GetHitResultUnderFinger();// 0x1cb4130
+	void GetHitResultUnderCursorForObjects();// 0x1cb3fb0
+	void GetHitResultUnderCursorByChannel();// 0x1cb3e50
+	void GetHitResultUnderCursor();// 0x1cb3cf0
+	void GetFocalLocation();// 0x1cb3c80
+	void FOV();// 0x1cb3c00
+	void EnableCheats();// 0x1cb3be0
+	void DeprojectScreenPositionToWorld();// 0x1cb3a60
+	void DeprojectMousePositionToWorld();// 0x1cb3960
+	void ConsoleKey();// 0x1cb3880
+	void ClientWasKicked();// 0x1cb3760
+	void ClientVoiceHandshakeComplete();// 0x1cb3740
+	void ClientUpdateMultipleLevelsStreamingStatus();// 0x1cb36a0
+	void ClientUpdateLevelStreamingStatus();// 0x1cb34f0
+	void ClientUnmutePlayer();// 0x1cb33d0
+	void ClientTravelInternal();// 0x1cb3260
+	void ClientTravel();// 0x1cb30f0
+	void ClientTeamMessage();// 0x1cb2f90
+	void ClientStopForceFeedback();// 0x1cb2ec0
+	void ClientStopCameraShake();// 0x1cb2df0
+	void ClientStopCameraAnim();// 0x1cb2d60
+	void ClientStartOnlineSession();// 0x1cb2d40
+	void ClientSpawnCameraLensEffect();// 0x1cb2cb0
+	void ClientSetViewTarget();// 0x1cb2b90
+	void ClientSetSpectatorWaiting();// 0x1cb2b00
+	void ClientSetHUD();// 0x1cb2a70
+	void ClientSetForceMipLevelsToBeResident();// 0x1cb2970
+	void ClientSetCinematicMode();// 0x1cb2800
+	void ClientSetCameraMode();// 0x1cb2770
+	void ClientSetCameraFade();// 0x1cb25e0
+	void ClientSetBlockOnAsyncLoading();// 0x8a9c00
+	void ClientReturnToMainMenuWithTextReason();// 0x1cb2520
+	void ClientReturnToMainMenu();// 0x1cb2480
+	void ClientRetryClientRestart();// 0x1cb23f0
+	void ClientRestart();// 0x1cb2360
+	void ClientReset();// 0x1cb2340
+	void ClientRepObjRef();// 0x1cb22b0
+	void ClientReceiveLocalizedMessage();// 0x1cb2130
+	void ClientPrestreamTextures();// 0x1cb1fe0
+	void ClientPrepareMapChange();// 0x1cb1ed0
+	void ClientPlaySoundAtLocation();// 0x1cb1d80
+	void ClientPlaySound();// 0x1cb1c80
+	void ClientPlayForceFeedback();// 0x1cb1b20
+	void ClientPlayCameraShake();// 0x1cb19c0
+	void ClientPlayCameraAnim();// 0x1cb1720
+	void ClientMutePlayer();// 0x1cb1600
+	void ClientMessage();// 0x1cb14e0
+	void ClientIgnoreMoveInput();// 0x1cb1450
+	void ClientIgnoreLookInput();// 0x1cb13c0
+	void ClientGotoState();// 0x1cb1330
+	void ClientGameEnded();// 0x1cb1260
+	void ClientForceGarbageCollection();// 0x1cb1240
+	void ClientFlushLevelStreaming();// 0x1cb1220
+	void ClientEndOnlineSession();// 0x1cb1200
+	void ClientEnableNetworkVoice();// 0x1cb1170
+	void ClientCommitMapChange();// 0x80d410
+	void ClientClearCameraLensEffects();// 0x1cb1150
+	void ClientCapBandwidth();// 0x1cb10c0
+	void ClientCancelPendingMapChange();// 0x80e710
+	void ClientAddTextureStreamingLoc();// 0x1cb0fa0
+	void ClearAudioListenerOverride();// 0x1cb0f80
+	void ClearAudioListenerAttenuationOverride();// 0x1cb0f60
+	void CanRestartPlayer();// 0x1cb0f30
+	void Camera();// 0x1cb0ea0
+	void AddYawInput();// 0x1cb0e20
+	void AddRollInput();// 0x1cb0da0
+	void AddPitchInput();// 0x1cb0d20
+	void ActivateTouchInterface();// 0x1cb0c90
+
+--------------------------------
+Class: Controller.Actor.Object
+	ObjectProperty PlayerState;//[Size: 8]
+	MulticastDelegateProperty OnInstigatedAnyDamage;//[Size: 16]
+	NameProperty StateName;//[Size: 8]
+	ObjectProperty Pawn;//[Size: 8]
+	ObjectProperty Character;//[Size: 8]
+	ObjectProperty TransformComponent;//[Size: 8]
+	StructProperty ControlRotation;//[Size: 12]
+	BoolProperty bAttachToPawn;//[Size: 1]
+	BoolProperty bIsPlayerController;//[Size: 1]
+	void UnPossess();// 0x1bfe9a0
+	void StopMovement();// 0x1bf5600
+	void SetInitialLocationAndRotation();// 0x1bfe8b0
+	void SetIgnoreMoveInput();// 0x1bfe820
+	void SetIgnoreLookInput();// 0x1bfe790
+	void SetControlRotation();// 0x1bfe700
+	void ResetIgnoreMoveInput();// 0x1bfe6e0
+	void ResetIgnoreLookInput();// 0x1bfe6c0
+	void ResetIgnoreInputFlags();// 0x1bfe6a0
+	void ReceiveInstigatedAnyDamage();// 0xb6a140
+	void Possess();// 0x1bfe610
+	void OnRep_PlayerState();// 0x89f000
+	void OnRep_Pawn();// 0x89efe0
+	void LineOfSightTo();// 0x1bfe4f0
+	void K2_GetPawn();// 0x1bfe4c0
+	void IsPlayerController();// 0x1bfe490
+	void IsMoveInputIgnored();// 0x1bfe460
+	void IsLookInputIgnored();// 0x1bfe430
+	void IsLocalPlayerController();// 0x1bfe3e0
+	void IsLocalController();// 0x1bfe3b0
+	void GetViewTarget();// 0x1bfe380
+	void GetDesiredRotation();// 0x1bfdfb0
+	void GetControlRotation();// 0x1bfd780
+	void ClientSetRotation();// 0x1bfd310
+	void ClientSetLocation();// 0x82b1c0
+	void CastToPlayerController();// 0x1bfd2e0
+
+--------------------------------
+Class: PlayerState.Info.Actor.Object
+	FloatProperty Score;//[Size: 4]
+	StrProperty PlayerName;//[Size: 16]
+	IntProperty PlayerID;//[Size: 4]
+	ByteProperty ping;//[Size: 1]
+	BoolProperty bShouldUpdateReplicatedPing;//[Size: 1]
+	BoolProperty bIsSpectator;//[Size: 1]
+	BoolProperty bOnlySpectator;//[Size: 1]
+	BoolProperty bIsABot;//[Size: 1]
+	BoolProperty bIsInactive;//[Size: 1]
+	BoolProperty bFromPreviousLevel;//[Size: 1]
+	IntProperty StartTime;//[Size: 4]
+	ClassProperty EngineMessageClass;//[Size: 8]
+	StrProperty SavedNetworkAddress;//[Size: 16]
+	StructProperty UniqueId;//[Size: 40]
+	ObjectProperty PawnPrivate;//[Size: 8]
+	StrProperty PlayerNamePrivate;//[Size: 16]
+	void ReceiveOverrideWith();// 0xb6a140
+	void ReceiveCopyProperties();// 0xb6a140
+	void OnRep_UniqueId();// 0x243aa0
+	void OnRep_Score();// 0x82b1a0
+	void OnRep_PlayerName();// 0x8428b0
+	void OnRep_PlayerId();// 0x8df9b0
+	void OnRep_bIsInactive();// 0x89ee20
+	void GetPlayerName();// 0x1cbf140
+
+--------------------------------
+Class: DarwinPlayerCameraManagerBP_C.DarwinPlayerCameraManager.PlayerCameraManager.Actor.Object
+
+--------------------------------
+Class: DarwinPlayerCameraManager.PlayerCameraManager.Actor.Object
+	StructProperty NormalCameraPOV;//[Size: 16]
+	FloatProperty GamepadExtraDistance;//[Size: 4]
+	StructProperty NormalViewPitchMinMax;//[Size: 8]
+	StructProperty CrouchingCameraPOV;//[Size: 16]
+	StructProperty CrouchingViewPitchMinMax;//[Size: 8]
+	FloatProperty CamSpeedFromCrouch;//[Size: 4]
+	FloatProperty CamSpeedToCrouch;//[Size: 4]
+	FloatProperty CamSpeedFromCrouchMoving;//[Size: 4]
+	FloatProperty CamSpeedToCrouchMoving;//[Size: 4]
+	BoolProperty CamLinearFromCrouchMoving;//[Size: 1]
+	BoolProperty CamLinearToCrouchMoving;//[Size: 1]
+	FloatProperty CamSpeedCrouchToShooting;//[Size: 4]
+	FloatProperty CamSpeedShootingToCrouch;//[Size: 4]
+	BoolProperty CamLinearFromCrouch;//[Size: 1]
+	BoolProperty CamLinearToCrouch;//[Size: 1]
+	BoolProperty CamLinearCrouchToShooting;//[Size: 1]
+	BoolProperty CamLinearShootingToCrouch;//[Size: 1]
+	StructProperty ShootingCameraPOV;//[Size: 16]
+	StructProperty ShootingViewPitchMinMax;//[Size: 8]
+	StructProperty ShootingGrenadeCameraPOV;//[Size: 16]
+	StructProperty ShootingGrenadeViewPitchMinMax;//[Size: 8]
+	StructProperty ShootRecoilCameraPOV;//[Size: 16]
+	StructProperty ShootRecoilViewPitchMinMax;//[Size: 8]
+	StructProperty DodgingFrontCameraPOV;//[Size: 16]
+	StructProperty DodgingFrontLeftCameraPOV;//[Size: 16]
+	StructProperty DodgingFrontRightCameraPOV;//[Size: 16]
+	StructProperty DodgingLeftCameraPOV;//[Size: 16]
+	StructProperty DodgingRightCameraPOV;//[Size: 16]
+	StructProperty DodgingBackCameraPOV;//[Size: 16]
+	StructProperty DodgingBackLeftCameraPOV;//[Size: 16]
+	StructProperty DodgingBackRightCameraPOV;//[Size: 16]
+	StructProperty DodgingViewPitchMinMax;//[Size: 8]
+	FloatProperty DodgingCamSpeed;//[Size: 4]
+	BoolProperty bDodgingLinearSpeed;//[Size: 1]
+	StructProperty RocketDashingCameraPOV;//[Size: 16]
+	StructProperty RocketDashingViewPitchMinMax;//[Size: 8]
+	FloatProperty RocketDashingCamSpeed;//[Size: 4]
+	BoolProperty bRocketDashingLinearSpeed;//[Size: 1]
+	StructProperty GiantOffset;//[Size: 12]
+	StructProperty ShrunkOffset;//[Size: 12]
+	StructProperty EagleCameraPOV;//[Size: 16]
+	StructProperty EagleViewPitchMinMax;//[Size: 8]
+	FloatProperty EagleCamSpeed;//[Size: 4]
+	BoolProperty bEagleLinearSpeed;//[Size: 1]
+	StructProperty HardLandingCameraPOV;//[Size: 16]
+	StructProperty HardLandingViewPitchMinMax;//[Size: 8]
+	FloatProperty HardLandingCamSpeed;//[Size: 4]
+	BoolProperty bHardLandingLinearSpeed;//[Size: 1]
+	StructProperty TrippedCameraPOV;//[Size: 16]
+	StructProperty TrippedViewPitchMinMax;//[Size: 8]
+	FloatProperty TrippedCamSpeed;//[Size: 4]
+	BoolProperty bTrippedLinearSpeed;//[Size: 1]
+	StructProperty InsideFoliageCameraPOV;//[Size: 16]
+	StructProperty InsideFoliageViewPitchMinMax;//[Size: 8]
+	FloatProperty InsideFoliageCamSpeed;//[Size: 4]
+	BoolProperty bInsideFoliageLinearSpeed;//[Size: 1]
+	StructProperty GrappledCameraPOV;//[Size: 16]
+	StructProperty GrappledViewPitchMinMax;//[Size: 8]
+	FloatProperty GrappledCamSpeed;//[Size: 4]
+	BoolProperty bGrappledLinearSpeed;//[Size: 1]
+	StructProperty RollLandingCameraPOV;//[Size: 16]
+	StructProperty RollLandingViewPitchMinMax;//[Size: 8]
+	FloatProperty RollLandingCamSpeed;//[Size: 4]
+	BoolProperty bRollLandingLinearSpeed;//[Size: 1]
+	StructProperty SniperCameraPOV;//[Size: 16]
+	StructProperty SniperViewPitchMinMax;//[Size: 8]
+	FloatProperty SniperCamSpeed;//[Size: 4]
+	BoolProperty bSniperLinearSpeed;//[Size: 1]
+	StructProperty GlidingCameraPOV;//[Size: 16]
+	StructProperty GlidingViewPitchMinMax;//[Size: 8]
+	StructProperty TeleportAimingCameraPOV;//[Size: 16]
+	StructProperty TeleportAimingViewPitchMinMax;//[Size: 8]
+	StructProperty BinocularCameraPOV;//[Size: 16]
+	StructProperty BinocularViewPitchMinMax;//[Size: 8]
+	StructProperty SprintingCameraPOV;//[Size: 16]
+	StructProperty SprintingViewPitchMinMax;//[Size: 8]
+	StructProperty SlidingCameraPOV;//[Size: 16]
+	StructProperty SlidingViewPitchMinMax;//[Size: 8]
+	StructProperty EmoteCameraPOV;//[Size: 16]
+	StructProperty EmoteViewPitchMinMax;//[Size: 8]
+	StructProperty HarvestingScrapCameraPOV;//[Size: 16]
+	StructProperty HarvestingScrapViewPitchMinMax;//[Size: 8]
+	StructProperty HarvestingWoodCameraPOV;//[Size: 16]
+	StructProperty HarvestingWoodViewPitchMinMax;//[Size: 8]
+	StructProperty HarvestingLeatherCameraPOV;//[Size: 16]
+	StructProperty HarvestingLeatherViewPitchMinMax;//[Size: 8]
+	StructProperty HarvestingElectronicCameraPOV;//[Size: 16]
+	StructProperty HarvestingElectronicViewPitchMinMax;//[Size: 8]
+	StructProperty TrappedCameraPOV;//[Size: 16]
+	StructProperty TrappedViewPitchMinMax;//[Size: 8]
+	StructProperty CraftingCameraPOV;//[Size: 16]
+	StructProperty CraftingViewPitchMinMax;//[Size: 8]
+	StructProperty SpawningCraftableToolCameraPOV;//[Size: 16]
+	StructProperty SpawningCraftableToolViewPitchMinMax;//[Size: 8]
+	StructProperty JumpingThroughWindowCameraPOV;//[Size: 16]
+	StructProperty JumpingThroughWindowViewPitchMinMax;//[Size: 8]
+	StructProperty ThrowingGrenadeCameraPOV;//[Size: 16]
+	StructProperty ThrowingGrenadeViewPitchMinMax;//[Size: 8]
+	StructProperty JumpingCameraPOV;//[Size: 16]
+	StructProperty JumpingViewPitchMinMax;//[Size: 8]
+	StructProperty TractionGrenadeCameraPOV;//[Size: 16]
+	StructProperty TractionGrenadeViewPitchMinMax;//[Size: 8]
+	FloatProperty GateFOV;//[Size: 4]
+	FloatProperty NormalToShootingSpeed;//[Size: 4]
+	FloatProperty ShootingToNormalSpeed;//[Size: 4]
+	FloatProperty InteriorTransitionSpeed;//[Size: 4]
+	FloatProperty RotaCamTransitionSpeedFactor;//[Size: 4]
+	ObjectProperty PitchExtrapolator;//[Size: 8]
+	ObjectProperty RotaCamPitchExtrapolator;//[Size: 8]
+	ObjectProperty RotaCamYawExtrapolator;//[Size: 8]
+	FloatProperty RotaCamFOV;//[Size: 4]
+	FloatProperty RotaCamDistance;//[Size: 4]
+	FloatProperty RotaSpeed;//[Size: 4]
+	FloatProperty ClueCamDistance;//[Size: 4]
+	IntProperty DressRoomCurrentCam;//[Size: 4]
+	FloatProperty BezierMidPlace;//[Size: 4]
+	FloatProperty BezierMaxHeight;//[Size: 4]
+	FloatProperty BezierTime;//[Size: 4]
+	void SetViewTargetForDressRoom();// 0x88b720
+	void SetShowDirectorIntroMode();// 0x88b660
+	void SetHeroesIntroMode();// 0x88b550
+	void SetDressRoomMode();// 0x88b400
+	void SetDressRoomCamera();// 0x88b380
+	void SetControlledByBeholderAI();// 0x88b2c0
+	void SetBeholderIntroMode();// 0x88b200
+	void GetCamRotationFromPOV();// 0x88b020
+	void GetCamLocationFromPOV();// 0x88afe0
+	void ChangeState();// 0x88af00
+	void CanEnterDressRoomMode();// 0x88aed0
+
+--------------------------------
+Class: PlayerCameraManager.Actor.Object
+	ObjectProperty PCOwner;//[Size: 8]
+	ObjectProperty TransformComponent;//[Size: 8]
+	FloatProperty DefaultFOV;//[Size: 4]
+	FloatProperty DefaultOrthoWidth;//[Size: 4]
+	FloatProperty DefaultAspectRatio;//[Size: 4]
+	StructProperty CameraCache;//[Size: 1344]
+	StructProperty LastFrameCameraCache;//[Size: 1344]
+	StructProperty ViewTarget;//[Size: 1360]
+	StructProperty PendingViewTarget;//[Size: 1360]
+	StructProperty CameraCachePrivate;//[Size: 1344]
+	StructProperty LastFrameCameraCachePrivate;//[Size: 1344]
+	ArrayProperty ModifierList;//[Size: 16]
+	ArrayProperty DefaultModifiers;//[Size: 16]
+	FloatProperty FreeCamDistance;//[Size: 4]
+	StructProperty FreeCamOffset;//[Size: 12]
+	StructProperty ViewTargetOffset;//[Size: 12]
+	ArrayProperty CameraLensEffects;//[Size: 16]
+	ObjectProperty CachedCameraShakeMod;//[Size: 8]
+	ObjectProperty AnimInstPool;//[Size: 8]
+	ArrayProperty PostProcessBlendCache;//[Size: 16]
+	ArrayProperty ActiveAnims;//[Size: 16]
+	ArrayProperty FreeAnims;//[Size: 16]
+	ObjectProperty AnimCameraActor;//[Size: 8]
+	BoolProperty bIsOrthographic;//[Size: 1]
+	BoolProperty bDefaultConstrainAspectRatio;//[Size: 1]
+	BoolProperty bClientSimulatingViewTarget;//[Size: 1]
+	BoolProperty bUseClientSideCameraUpdates;//[Size: 1]
+	BoolProperty bGameCameraCutThisFrame;//[Size: 1]
+	FloatProperty ViewPitchMin;//[Size: 4]
+	FloatProperty ViewPitchMax;//[Size: 4]
+	FloatProperty ViewYawMin;//[Size: 4]
+	FloatProperty ViewYawMax;//[Size: 4]
+	FloatProperty ViewRollMin;//[Size: 4]
+	FloatProperty ViewRollMax;//[Size: 4]
+	void StopCameraShake();// 0x1cadc00
+	void StopCameraFade();// 0x1cadbe0
+	void StopCameraAnimInst();// 0x1cadb10
+	void StopAllInstancesOfCameraShake();// 0x1cada40
+	void StopAllInstancesOfCameraAnim();// 0x1cad970
+	void StopAllCameraShakes();// 0x1cad8e0
+	void StopAllCameraAnims();// 0x1cad850
+	void StartCameraFade();// 0x1cad680
+	void SetManualCameraFade();// 0x1cad360
+	void RemoveCameraModifier();// 0x1cad040
+	void RemoveCameraLensEffect();// 0x1cacfb0
+	void PlayCameraShake();// 0x1cace20
+	void PlayCameraAnim();// 0x1cacb40
+	void PhotographyCameraModify();// 0x1cac9c0
+	void OnPhotographySessionStart();// 0x8df9b0
+	void OnPhotographySessionEnd();// 0x89ee20
+	void OnPhotographyMultiPartCaptureStart();// 0x8428b0
+	void OnPhotographyMultiPartCaptureEnd();// 0x82b1a0
+	void GetOwningPlayerController();// 0x1cac320
+	void GetFOVAngle();// 0x1bf5800
+	void GetCameraRotation();// 0x1cac000
+	void GetCameraLocation();// 0x1cabfc0
+	void FindCameraModifierByClass();// 0x1cabf20
+	void ClearCameraLensEffects();// 0x864a80
+	void BlueprintUpdateCamera();// 0xb6a140
+	void AddNewCameraModifier();// 0x1cabe80
+	void AddCameraLensEffect();// 0x1cabde0
+
+--------------------------------
+Class: DarwinHUDBP_C.DarwinHUD.HUD.Actor.Object
+	ObjectProperty DefaultSceneRoot;//[Size: 8]
+
+--------------------------------
+Class: DarwinHUD.HUD.Actor.Object
+	void GetScreenWidth();// 0x86d860
+	void GetScreenHeight();// 0x86d830
+
+--------------------------------
+Class: HUD.Actor.Object
+	ObjectProperty PlayerOwner;//[Size: 8]
+	BoolProperty bLostFocusPaused;//[Size: 1]
+	BoolProperty bShowHUD;//[Size: 1]
+	BoolProperty bShowDebugInfo;//[Size: 1]
+	IntProperty CurrentTargetIndex;//[Size: 4]
+	BoolProperty bShowHitBoxDebugInfo;//[Size: 1]
+	BoolProperty bShowOverlays;//[Size: 1]
+	BoolProperty bEnableDebugTextShadow;//[Size: 1]
+	ArrayProperty PostRenderedActors;//[Size: 16]
+	ArrayProperty DebugDisplay;//[Size: 16]
+	ArrayProperty ToggledDebugCategories;//[Size: 16]
+	ObjectProperty Canvas;//[Size: 8]
+	ObjectProperty DebugCanvas;//[Size: 8]
+	ArrayProperty DebugTextList;//[Size: 16]
+	ClassProperty ShowDebugTargetDesiredClass;//[Size: 8]
+	ObjectProperty ShowDebugTargetActor;//[Size: 8]
+	void ShowHUD();// 0x82b1a0
+	void ShowDebugToggleSubCategory();// 0x1c29790
+	void ShowDebugForReticleTargetToggle();// 0x1c29710
+	void ShowDebug();// 0x84ceb0
+	void RemoveDebugText();// 0x1c29580
+	void RemoveAllDebugStrings();// 0x1c29560
+	void ReceiveHitBoxRelease();// 0xb6a140
+	void ReceiveHitBoxEndCursorOver();// 0xb6a140
+	void ReceiveHitBoxClick();// 0xb6a140
+	void ReceiveHitBoxBeginCursorOver();// 0xb6a140
+	void ReceiveDrawHUD();// 0xb6a140
+	void Project();// 0x1c290e0
+	void PreviousDebugTarget();// 0x1c233a0
+	void NextDebugTarget();// 0x1c28da0
+	void GetTextSize();// 0x1c285e0
+	void GetOwningPlayerController();// 0x419600
+	void GetOwningPawn();// 0x1c285b0
+	void GetActorsInSelectionRectangle();// 0x1c283a0
+	void DrawTextureSimple();// 0x1c28210
+	void DrawTexture();// 0x1c27df0
+	void DrawText();// 0x1c27bd0
+	void DrawRect();// 0x1c27a20
+	void DrawMaterialTriangle();// 0x1c27760
+	void DrawMaterialSimple();// 0x1c27560
+	void DrawMaterial();// 0x1c271d0
+	void DrawLine();// 0x1c26ff0
+	void Deproject();// 0x1c26e80
+	void AddHitBox();// 0x1c26b70
+	void AddDebugText();// 0x1c267f0
+
+--------------------------------
+Class: DarwinPurgatoryPawnBP_C.DarwinPurgatoryPawn.DefaultPawn.Pawn.Actor.Object
+	StructProperty UberGraphFrame;//[Size: 8]
+	void UserConstructionScript(None(None) None);// 0xb6a140
+	void ReceiveBeginPlay(None(None) None);// 0xb6a140
+	void ExecuteUbergraph_DarwinPurgatoryPawnBP(None(None) None);// 0xb6a140
+
+--------------------------------
+Class: DarwinPurgatoryPawn.DefaultPawn.Pawn.Actor.Object
+	FloatProperty AvatarYaw;//[Size: 4]
+	BoolProperty bIsInCraftWheel;//[Size: 1]
+	ClassProperty CraftingComponentClass;//[Size: 8]
+	ObjectProperty CraftingComponent;//[Size: 8]
+	FloatProperty DressRoomGamepadRotationMultiplier;//[Size: 4]
+	SoftClassProperty MainMenuWidgetClass;//[Size: 40]
+	WeakObjectProperty MainMenuWidget;//[Size: 8]
+	ClassProperty StartScreenWidgetClass;//[Size: 8]
+	WeakObjectProperty StartScreenWidget;//[Size: 8]
+	ClassProperty AuthenticationWidgetClass;//[Size: 8]
+	WeakObjectProperty AuthenticationWidget;//[Size: 8]
+	void SetDressRoomMode();// 0x89f080
+	void IsUsingGamepadCraftWheel();// 0x89ece0
+
+--------------------------------
+Class: DefaultPawn.Pawn.Actor.Object
+	FloatProperty BaseTurnRate;//[Size: 4]
+	FloatProperty BaseLookUpRate;//[Size: 4]
+	ObjectProperty MovementComponent;//[Size: 8]
+	ObjectProperty CollisionComponent;//[Size: 8]
+	ObjectProperty MeshComponent;//[Size: 8]
+	BoolProperty bAddDefaultMovementBindings;//[Size: 1]
+	void TurnAtRate();// 0x1c03090
+	void MoveUp_World();// 0x1c026e0
+	void MoveRight();// 0x1c02660
+	void MoveForward();// 0x1c025e0
+	void LookUpAtRate();// 0x1c02560
+
+--------------------------------
+Class: Pawn.Actor.Object
+	BoolProperty bUseControllerRotationPitch;//[Size: 1]
+	BoolProperty bUseControllerRotationYaw;//[Size: 1]
+	BoolProperty bUseControllerRotationRoll;//[Size: 1]
+	BoolProperty bCanAffectNavigationGeneration;//[Size: 1]
+	FloatProperty BaseEyeHeight;//[Size: 4]
+	ByteProperty AutoPossessPlayer;//[Size: 1]
+	EnumProperty AutoPossessAI;//[Size: 1]
+	ByteProperty RemoteViewPitch;//[Size: 1]
+	ClassProperty AIControllerClass;//[Size: 8]
+	ObjectProperty PlayerState;//[Size: 8]
+	ObjectProperty LastHitBy;//[Size: 8]
+	ObjectProperty Controller;//[Size: 8]
+	StructProperty ControlInputVector;//[Size: 12]
+	StructProperty LastControlInputVector;//[Size: 12]
+	void SpawnDefaultController();// 0x1bf5600
+	void SetCanAffectNavigationGeneration();// 0x1ca4850
+	void ReceiveUnpossessed();// 0xb6a140
+	void ReceivePossessed();// 0xb6a140
+	void PawnMakeNoise();// 0x1ca3c30
+	void OnRep_PlayerState();// 0x89efe0
+	void OnRep_Controller();// 0x1ca3c10
+	void LaunchPawn();// 0x1ca3af0
+	void K2_GetMovementInputVector();// 0x1ca3a20
+	void IsPlayerControlled();// 0x1c1ad10
+	void IsMoveInputIgnored();// 0x1ca3ac0
+	void IsLocallyControlled();// 0x1ca3a90
+	void IsControlled();// 0x1ca3a60
+	void GetPendingMovementInputVector();// 0x1ca3a20
+	void GetNavAgentLocation();// 0x1ca39a0
+	void GetMovementComponent();// 0x1c023b0
+	static void GetMovementBaseActor();// 0x1ca3880
+	void GetLastMovementInputVector();// 0x1ca3840
+	void GetControlRotation();// 0x1ca37e0
+	void GetController();// 0x1ca3820
+	void GetBaseAimRotation();// 0x1ca3040
+	void DetachFromControllerPendingDestroy();// 0x1ca2e50
+	void ConsumeMovementInputVector();// 0x1ca2cb0
+	void AddMovementInput();// 0x1ca2a40
+	void AddControllerYawInput();// 0x1ca29c0
+	void AddControllerRollInput();// 0x1ca2940
+	void AddControllerPitchInput();// 0x1ca28c0
+
+--------------------------------
+Class: DarwinStormParticleSubActorBP_C.DarwinStormParticleSubActor.DarwinControllerSubActor.Actor.Object
+	ObjectProperty DefaultSceneRoot;//[Size: 8]
+
+--------------------------------
+Class: DarwinStormParticleSubActor.DarwinControllerSubActor.Actor.Object
+
+--------------------------------
+Class: DarwinControllerSubActor.Actor.Object
+	ObjectProperty DarwinGameState;//[Size: 8]
+	ObjectProperty DarwinController;//[Size: 8]
+	WeakObjectProperty DarwinCharacterOwner;//[Size: 8]
+	WeakObjectProperty DarwinDronePawnOwner;//[Size: 8]
+	WeakObjectProperty DarwinBeholderOwner;//[Size: 8]
+	WeakObjectProperty DarwinShowDirectorOwner;//[Size: 8]
+	void OwnerIsShowDirector();// 0x842c60
+	void OwnerIsDronePawn();// 0x842c00
+	void OwnerIsCharacter();// 0x842ba0
+	void OwnerIsBeholder();// 0x842b40
+
+--------------------------------
+Class: DarwinParticleManagerBP_C.DarwinParticleManager.DarwinControllerSubActor.Actor.Object
+	StructProperty UberGraphFrame;//[Size: 8]
+	void UserConstructionScript(None(None) None);// 0xb6a140
+	void AddAtmosphericCloud(None(None) None);// 0xb6a140
+	void UpdateStormIntensity(None(None) None);// 0xb6a140
+	void UpdateFogColor(None(None) None);// 0xb6a140
+	void AddBlackBodies(None(None) None);// 0xb6a140
+	void UpdateSunColor(None(None) None);// 0xb6a140
+	void AddCloud(None(None) None);// 0xb6a140
+	void ReceiveTick(None(None) None);// 0xb6a140
+	void RemoveCloud(None(None) None);// 0xb6a140
+	void RemoveBlackBodies(None(None) None);// 0xb6a140
+	void ExecuteUbergraph_DarwinParticleManagerBP(None(None) None);// 0xb6a140
+	ObjectProperty DefaultSceneRoot;//[Size: 8]
+	ArrayProperty Clouds;//[Size: 16]
+	ArrayProperty BlackBodies;//[Size: 16]
+	StructProperty FogColor_Dep;//[Size: 16]
+	FloatProperty StormIntensity_Dep;//[Size: 4]
+	ArrayProperty AtmosphericClouds;//[Size: 16]
+	StructProperty SunColor_Dep;//[Size: 16]
+	StructProperty MinSunColor;//[Size: 16]
+	StructProperty MinFogColor;//[Size: 16]
+
+--------------------------------
+Class: DarwinParticleManager.DarwinControllerSubActor.Actor.Object
+	ArrayProperty StormClouds;//[Size: 16]
+	ArrayProperty FireBlackBodies;//[Size: 16]
+	ArrayProperty AmbientClouds;//[Size: 16]
+	StructProperty FogColor;//[Size: 16]
+	StructProperty SunColor;//[Size: 16]
+	StructProperty SunDirection;//[Size: 12]
+	FloatProperty StormIntensity;//[Size: 4]
+	ObjectProperty EnvironmentManager;//[Size: 8]
+	void UpdateAmbientClouds();// 0x88b7a0
+
+--------------------------------
+Class: JerichoCustomizationBP_C.DarwinCharacterCustomization.Actor.Object
+	StructProperty UberGraphFrame;//[Size: 8]
+	void UserConstructionScript(None(None) None);// 0xb6a140
+	void ReceiveBeginPlay(None(None) None);// 0xb6a140
+	void ExecuteUbergraph_JerichoCustomizationBP(None(None) None);// 0xb6a140
+	ObjectProperty DefaultSceneRoot;//[Size: 8]
+
+--------------------------------
+Class: DarwinCharacterCustomization.Actor.Object
+	ArrayProperty ModifiedOptions;//[Size: 16]
+	IntProperty NextItemId;//[Size: 4]
+	ArrayProperty ShirtSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty ShirtMaterialCollection;//[Size: 16]
+	ArrayProperty PantsSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty PantsMaterialCollection;//[Size: 16]
+	ArrayProperty SkinSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty SkinMaterialCollection;//[Size: 16]
+	ArrayProperty ArmorSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty ArmorMaterialCollection;//[Size: 16]
+	ArrayProperty BootsSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty BootsMaterialCollection;//[Size: 16]
+	ArrayProperty CoatSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty CoatMaterialCollection;//[Size: 16]
+	ArrayProperty AxeSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty AxeMaterialCollection;//[Size: 16]
+	ArrayProperty BowSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty BowMaterialCollection;//[Size: 16]
+	ArrayProperty HelmetSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty HelmetMaterialCollection;//[Size: 16]
+	ArrayProperty HairsSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty HairsMaterialCollection;//[Size: 16]
+	ArrayProperty BeardSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty BeardMaterialCollection;//[Size: 16]
+	ArrayProperty EyesMaterialCollection;//[Size: 16]
+	ObjectProperty EyesGlassMat;//[Size: 8]
+	ArrayProperty FacePaintCollection;//[Size: 16]
+	ObjectProperty HandsSkelMesh;//[Size: 8]
+	ObjectProperty EyebrowsSkelMesh;//[Size: 8]
+	ObjectProperty ArrowSkelMesh;//[Size: 8]
+	ObjectProperty ArrowMat;//[Size: 8]
+	ObjectProperty PouchElectronicStaticMesh;//[Size: 8]
+	ObjectProperty PouchSpeedStaticMesh;//[Size: 8]
+	ObjectProperty PouchStaminaStaticMesh;//[Size: 8]
+	ObjectProperty PouchHealthStaticMesh;//[Size: 8]
+	ObjectProperty PouchWarmthStaticMesh;//[Size: 8]
+	ObjectProperty PouchStaticMesh;//[Size: 8]
+	ObjectProperty PouchHealthMat;//[Size: 8]
+	ObjectProperty PouchWarmthMat;//[Size: 8]
+	ObjectProperty PouchSpeedMat;//[Size: 8]
+	ObjectProperty PouchStaminaMat;//[Size: 8]
+	ObjectProperty PouchToolMat;//[Size: 8]
+	ObjectProperty PouchElectronicMat;//[Size: 8]
+	ObjectProperty NakedCensureMat;//[Size: 8]
+	ObjectProperty TransparentMat;//[Size: 8]
+	ObjectProperty CraftedParticleSystem;//[Size: 8]
+	ObjectProperty IceShardsParticleSystem;//[Size: 8]
+	ObjectProperty NakedSmokeParticleSystem;//[Size: 8]
+	ClassProperty AnimInstanceClass;//[Size: 8]
+	EnumProperty BodyType;//[Size: 1]
+	ObjectProperty DressRoomModelMat;//[Size: 8]
+	ArrayProperty WingsSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty WingsMaterialCollection;//[Size: 16]
+	ArrayProperty GauntletSkeletalMeshCollection;//[Size: 16]
+	ArrayProperty GauntletMaterialCollection;//[Size: 16]
+	void UpdateUsedCollection();// 0x818a40
+	void UpdateToAssetPtr();// 0x3f4d20
+	void UnloadAllSkeletalMeshes();// 0x818970
+	void UnloadAllIcons();// 0x8188e0
+	void StopAsyncSkeletasHandles();// 0x8188c0
+	void StopAsyncIconsHandles();// 0x8188a0
+	void SortAllSkelMeshes();// 0x818880
+	void SortAllMaterials();// 0x818860
+	void SetItemsBodyType();// 0x818790
+	void ResetUsedCollection();// 0x818690
+	void PreLoadAllIcons();// 0x818650
+	void PostAsyncSkeletalMeshes();// 0x8183f0
+	void PostAsyncLoadIcons();// 0x8182d0
+	void LoadIcon();// 0x818090
+	void GetItemInfoStruct();// 0x817cc0
+	void CleanAsyncSkeletasHandles();// 0x817bd0
+	void CleanAsyncIconsHandles();// 0x817bb0
+	void AsyncLoadSkeletalMeshes();// 0x817940
+	void AsyncLoadMaterialIcons();// 0x817740
+	void AsyncLoadIcons();// 0x8175b0
+	void AssignAllIndexes();// 0x817590
+
+--------------------------------
+Class: ArtemisCustomizationBP_C.DarwinCharacterCustomization.Actor.Object
+	void UserConstructionScript(None(None) None);// 0xb6a140
+	ObjectProperty DefaultSceneRoot;//[Size: 8]
+
+--------------------------------
+Class: DressRoomCapture_C.DressRoomSceneCapture2D.Actor.Object
+	StructProperty UberGraphFrame;//[Size: 8]
+	void ShowFriendModel(None(None) None);// 0xb6a140
+	void InitFriendModel(None(None) None);// 0xb6a140
+	void UpdateLights(None(None) None);// 0xb6a140
+	void SwitchGenderAndCo(None(None) None);// 0xb6a140
+	void ResetAvatarVisibilities(None(None) None);// 0xb6a140
+	void SetInShop(None(None) None);// 0xb6a140
+	void InitModel(None(None) None);// 0xb6a140
+	void InitModelFromCustomization(None(None) None);// 0xb6a140
+	void UpdateModelMaterial(None(None) None);// 0xb6a140
+	void GoToCaptureCamera(None(None) None);// 0xb6a140
+	void SetAllModelMaterials(None(None) None);// 0xb6a140
+	void UpdateModelVisibility(None(None) None);// 0xb6a140
+	void SetAnim(None(None) None);// 0xb6a140
+	void StopAnim(None(None) None);// 0xb6a140
+	void StartAnim(None(None) None);// 0xb6a140
+	void StopCapture(None(None) None);// 0xb6a140
+	void StartCapture(None(None) None);// 0xb6a140
+	void SearchDressRoomUI(None(None) None);// 0xb6a140
+	void UserConstructionScript(None(None) None);// 0xb6a140
+	void ReceiveBeginPlay(None(None) None);// 0xb6a140
+	void CaptureModel(None(None) None);// 0xb6a140
+	void EventActivateCapture(None(None) None);// 0xb6a140
+	void EventGoToCamera(None(None) None);// 0xb6a140
+	void EventDeactivateCapture(None(None) None);// 0xb6a140
+	void EventInitModel(None(None) None);// 0xb6a140
+	void EventInitModelFromCustomization(None(None) None);// 0xb6a140
+	void EventHideModel(None(None) None);// 0xb6a140
+	void EventStartAnimation(None(None) None);// 0xb6a140
+	void EventStopAnimation(None(None) None);// 0xb6a140
+	void EventSetAnimation(None(None) None);// 0xb6a140
+	void ReceiveTick(None(None) None);// 0xb6a140
+	void EventUpdateModelVisibity(None(None) None);// 0xb6a140
+	void EventSetAllModelMaterials(None(None) None);// 0xb6a140
+	void EventUpdateModel(None(None) None);// 0xb6a140
+	void EventApplyFriendEquipment(None(None) None);// 0xb6a140
+	void EventFriendEquippedCustomizationUpdate(None(None) None);// 0xb6a140
+	void CheckForFriendUpdate(None(None) None);// 0xb6a140
+	void ExecuteUbergraph_DressRoomCapture(None(None) None);// 0xb6a140
+	ObjectProperty StaticMesh8;//[Size: 8]
+	ObjectProperty MainMenuCamera;//[Size: 8]
+	ObjectProperty StaticMesh7;//[Size: 8]
+	ObjectProperty BootsCamera;//[Size: 8]
+	ObjectProperty StaticMesh6;//[Size: 8]
+	ObjectProperty PantsCamera;//[Size: 8]
+	ObjectProperty StaticMesh5;//[Size: 8]
+	ObjectProperty ShirtCamera;//[Size: 8]
+	ObjectProperty StaticMesh4;//[Size: 8]
+	ObjectProperty BowCamera;//[Size: 8]
+	ObjectProperty StaticMesh3;//[Size: 8]
+	ObjectProperty AxeCamera;//[Size: 8]
+	ObjectProperty StaticMesh2;//[Size: 8]
+	ObjectProperty OldHTHeadCamera;//[Size: 8]
+	ObjectProperty SceneCaptureComponent2D_Depth;//[Size: 8]
+	ObjectProperty StaticMesh1;//[Size: 8]
+	ObjectProperty StaticMesh;//[Size: 8]
+	ObjectProperty Sphere;//[Size: 8]
+	ObjectProperty SceneCaptureComponent2D;//[Size: 8]
+	ObjectProperty HTHeadCamera;//[Size: 8]
+	ObjectProperty BGHeadCamera;//[Size: 8]
+	ObjectProperty BodyCamera;//[Size: 8]
+	ObjectProperty DefaultSceneRoot;//[Size: 8]
+	ObjectProperty avatar;//[Size: 8]
+	ObjectProperty DressRoomUI;//[Size: 8]
+	ObjectProperty LocalPlayer;//[Size: 8]
+	ObjectProperty LocalPurgatoryPawn;//[Size: 8]
+	FloatProperty TransitionTimer;//[Size: 4]
+	IntProperty Camera;//[Size: 4]
+	FloatProperty TransitionTotalTimer;//[Size: 4]
+	StructProperty CameraLocation;//[Size: 12]
+	BoolProperty CharacterSpawned;//[Size: 1]
+	IntProperty SuitVersionIndexAtStart;//[Size: 4]
+	BoolProperty CaptureFromMainMenu;//[Size: 1]
+	ObjectProperty PlayerCameraManager;//[Size: 8]
+	StructProperty CameraRotation;//[Size: 12]
+	ArrayProperty AllAvatars;//[Size: 16]
+	IntProperty FriendSkinMatIndex;//[Size: 4]
+	IntProperty FriendSkinSkelIndex;//[Size: 4]
+	IntProperty FriendFacepaintIndex;//[Size: 4]
+	StructProperty FriendInfos;//[Size: 120]
+	BoolProperty FriendInfosReceived;//[Size: 1]
+	BoolProperty FriendInfosApplied;//[Size: 1]
+	ObjectProperty LocalFriend;//[Size: 8]
+	ObjectProperty friendAvatar;//[Size: 8]
+	StructProperty FriendEquipment;//[Size: 24]
+	IntProperty FriendOnlineID;//[Size: 4]
+	BoolProperty FriendEquipmentChanged;//[Size: 1]
+	FloatProperty CheckForFriendUpdateTimer;//[Size: 4]
+
+--------------------------------
+Class: DressRoomSceneCapture2D.Actor.Object
+	void SwitchGender();// 0x8d6300
+	void SpawnDummyCharacter();// 0x8d6270
+	void SetSelectedBodyType();// 0x8d5f00
+	void GetSelectedBodyType();// 0x8d2cc0
+	void EventUpdateModelVisibity();// 0xb6a140
+	void EventUpdateModel();// 0xb6a140
+	void EventStopAnimation();// 0xb6a140
+	void EventStartAnimation();// 0xb6a140
+	void EventSetModelMaterial();// 0xb6a140
+	void EventSetAnimation();// 0xb6a140
+	void EventSetAllModelMaterials();// 0xb6a140
+	void EventInitModelFromCustomization();// 0xb6a140
+	void EventInitModel();// 0xb6a140
+	void EventHideModel();// 0xb6a140
+	void EventGoToCamera();// 0xb6a140
+	void EventFriendEquippedCustomizationUpdate();// 0xb6a140
+	void EventDeactivateCapture();// 0xb6a140
+	void EventActivateCapture();// 0xb6a140
+
+--------------------------------
+Class: DarwinCharacterBP_C.DarwinCharacter.Character.Pawn.Actor.Object
+	StructProperty UberGraphFrame;//[Size: 8]
+	void LaunchRagDoll(None(None) None);// 0xb6a140
+	void UserConstructionScript(None(None) None);// 0xb6a140
+	void SequenceBeginCaptainDarwin(None(None) None);// 0xb6a140
+	void SequenceUpdateCaptainDarwin(None(None) None);// 0xb6a140
+	void SequenceEndCaptainDarwin(None(None) None);// 0xb6a140
+	void EventNewPlayerJoined(None(None) None);// 0xb6a140
+	void UpdateStormIntensity(None(None) None);// 0xb6a140
+	void EventManHuntActivate(None(None) None);// 0xb6a140
+	void EventUpdateStormParticles(None(None) None);// 0xb6a140
+	void SequenceEndDarkNinja(None(None) None);// 0xb6a140
+	void SequenceBeginDarkNinja(None(None) None);// 0xb6a140
+	void SequenceUpdateDarkNinja(None(None) None);// 0xb6a140
+	void EventHitByAxe(None(None) None);// 0xb6a140
+	void EventProjectileHitArmor(None(None) None);// 0xb6a140
+	void EventProjectileHit(None(None) None);// 0xb6a140
+	void EventProjectileHeadShot(None(None) None);// 0xb6a140
+	void EventSpawnDeadDecal(None(None) None);// 0xb6a140
+	void EventLocalIsTheWinner(None(None) None);// 0xb6a140
+	void EventLocalIsLoser(None(None) None);// 0xb6a140
+	void EventEnterForbiddenZone(None(None) None);// 0xb6a140
+	void EventEnterSafeZone(None(None) None);// 0xb6a140
+	void EventZoneWillBeForbidden(None(None) None);// 0xb6a140
+	void EventSpawnAmbientParticles(None(None) None);// 0xb6a140
+	void EventSpawnMysteryBox(None(None) None);// 0xb6a140
+	void EventManHuntTerminate(None(None) None);// 0xb6a140
+	void EventCallDeliveryDrone(None(None) None);// 0xb6a140
+	void EventUpdateNuclearFX(None(None) None);// 0xb6a140
+	void EventUnTrapped(None(None) None);// 0xb6a140
+	void EventForceFeedbackAxe(None(None) None);// 0xb6a140
+	void EventForceFeedbackArrow(None(None) None);// 0xb6a140
+	void EventForceFeedbackDead(None(None) None);// 0xb6a140
+	void EventForceFeedbackHarvest(None(None) None);// 0xb6a140
+	void EventForceFeedbackHit(None(None) None);// 0xb6a140
+	void EventUpdateForceFeedback(None(None) None);// 0xb6a140
+	void EventSetArrowOnFire(None(None) None);// 0xb6a140
+	void EventTurnOffArrowFire(None(None) None);// 0xb6a140
+	void EventKilled(None(None) None);// 0xb6a140
+	void DeathForceFeedback(None(None) None);// 0xb6a140
+	void EventArmorHit(None(None) None);// 0xb6a140
+	void EventUpdateGravityStorm(None(None) None);// 0xb6a140
+	void ReceiveBeginPlay(None(None) None);// 0xb6a140
+	void EventBurnt(None(None) None);// 0xb6a140
+	void EventIsFavoritePlayer(None(None) None);// 0xb6a140
+	void EventStopHidingFoliageFX(None(None) None);// 0xb6a140
+	void EventEmitHidingFoliageFX(None(None) None);// 0xb6a140
+	void SequenceEndJohnDoe(None(None) None);// 0xb6a140
+	void SequenceBeginJohnDoe(None(None) None);// 0xb6a140
+	void InitiateVFXforCountdownStartTeleport(None(None) None);// 0xb6a140
+	void EventEnterFoliage(None(None) None);// 0xb6a140
+	void EventExitFoliage(None(None) None);// 0xb6a140
+	void InitiateVFXforMatchStartTeleport(None(None) None);// 0xb6a140
+	void EventBecomesNaked(None(None) None);// 0xb6a140
+	void EventBecomesUnNaked(None(None) None);// 0xb6a140
+	void DrawOverlapSphere(None(None) None);// 0xb6a140
+	void EventAuthorityTick(None(None) None);// 0xb6a140
+	void EventUpdateLeash(None(None) None);// 0xb6a140
+	void EventLeashStart(None(None) None);// 0xb6a140
+	void EventLeashEnd(None(None) None);// 0xb6a140
+	void EventUpdateLavaAshes(None(None) None);// 0xb6a140
+	void EventUpdateCableHookTick(None(None) None);// 0xb6a140
+	void EventSpawnSequenceEmitters(None(None) None);// 0xb6a140
+	void EventSequenceBegin(None(None) None);// 0xb6a140
+	void EventSequenceUpdate(None(None) None);// 0xb6a140
+	void EventSequenceEnd(None(None) None);// 0xb6a140
+	void EventUpdateJetPackVFX(None(None) None);// 0xb6a140
+	void EventBeginJetPackVFX(None(None) None);// 0xb6a140
+	void EventEndJetPackVFX(None(None) None);// 0xb6a140
+	void EventGameCountdownStarted(None(None) None);// 0xb6a140
+	void EventGameStarted(None(None) None);// 0xb6a140
+	void EventTractionEnd(None(None) None);// 0xb6a140
+	void EventTractionInterupt(None(None) None);// 0xb6a140
+	void EventUsingTractionEnd(None(None) None);// 0xb6a140
+	void EventInteruptUsingTraction(None(None) None);// 0xb6a140
+	void EventPassiveUpdated(None(None) None);// 0xb6a140
+	void BeginAirDodgeJetPackVFX(None(None) None);// 0xb6a140
+	void EndAirDodgeJetPackVFX(None(None) None);// 0xb6a140
+	void ScreenFillingVFXDuringPortal(None(None) None);// 0xb6a140
+	void VFX_SpawnDoodadCollection(None(None) None);// 0xb6a140
+	void BeScannedByFalcon(None(None) None);// 0xb6a140
+	void ExecuteUbergraph_DarwinCharacterBP(None(None) None);// 0xb6a140
+	void EnableGauntletIdleAfterCine__DelegateSignature(None(None) None);// 0xb6a140
+	void DisableGauntletIdleForCine__DelegateSignature(None(None) None);// 0xb6a140
+	void PassiveAbilityUpdated__DelegateSignature(None(None) None);// 0xb6a140
+	ObjectProperty P_BlueExplosion;//[Size: 8]
+	ObjectProperty MyAxeCurveBox;//[Size: 8]
+	ObjectProperty MyAxeBox;//[Size: 8]
+	ObjectProperty MyArrowBox;//[Size: 8]
+	ObjectProperty VFX_P_LavaAshes;//[Size: 8]
+	ObjectProperty Decal;//[Size: 8]
+	ObjectProperty Hook;//[Size: 8]
+	ObjectProperty Cable;//[Size: 8]
+	ObjectProperty P_ColdBreath;//[Size: 8]
+	ObjectProperty Ak_Player;//[Size: 8]
+	ObjectProperty P_Fog;//[Size: 8]
+	ObjectProperty FX_snow_dense;//[Size: 8]
+	ObjectProperty PostProcessComponent;//[Size: 8]
+	FloatProperty SnowIntensity;//[Size: 4]
+	ObjectProperty FogParticleComponent;//[Size: 8]
+	ObjectProperty SnowParticleComponent;//[Size: 8]
+	IntProperty NumberOfPlayerAlive;//[Size: 4]
+	ObjectProperty AmbientFogParticleComponent;//[Size: 8]
+	ObjectProperty GravityStormParticleComponent;//[Size: 8]
+	ObjectProperty ManhuntDrone;//[Size: 8]
+	StructProperty VelocityOnDeath;//[Size: 12]
+	ObjectProperty NuclearFireParticleComponent;//[Size: 8]
+	ObjectProperty ArrowTorchParticleComponent;//[Size: 8]
+	NameProperty SpawnRateName;//[Size: 8]
+	NameProperty RateName;//[Size: 8]
+	NameProperty OpacityName;//[Size: 8]
+	NameProperty RateScaleName;//[Size: 8]
+	NameProperty DarwinCharacterName;//[Size: 8]
+	BoolProperty LocalDeath;//[Size: 1]
+	ObjectProperty CableLeash;//[Size: 8]
+	ObjectProperty CableWoodStick;//[Size: 8]
+	ObjectProperty CableMaterial;//[Size: 8]
+	FloatProperty CableMaxLength;//[Size: 4]
+	ObjectProperty HeroesPresentation;//[Size: 8]
+	NameProperty PresentationOpacityName;//[Size: 8]
+	FloatProperty VFX_CD_JetAcceleration;//[Size: 4]
+	ObjectProperty VFX Axe Additional Particles;//[Size: 8]
+	ObjectProperty VFX Axe AnimTrail System Comp Base;//[Size: 8]
+	ObjectProperty VFX Axe Dynamic Mat;//[Size: 8]
+	ObjectProperty VFX Axe AnimTrail Base Mat;//[Size: 8]
+	ObjectProperty VFX Axe Anim Trail;//[Size: 8]
+	ObjectProperty VFX Axe Anim Trail System Comp Tip;//[Size: 8]
+	ObjectProperty VFX Axe Anim Trail Tip Mat;//[Size: 8]
+	ObjectProperty VFX Captain Darwin Anim Trail Wing R;//[Size: 8]
+	ObjectProperty VFX Captain Darwin Anim Trail Wing R Mat;//[Size: 8]
+	ObjectProperty VFX Captain Darwin Wing Trail;//[Size: 8]
+	ObjectProperty VFX Captain Darwin Dynamic Wing Trail Mat;//[Size: 8]
+	ObjectProperty VFX Captain Darwin Anim Trail Wing L;//[Size: 8]
+	ObjectProperty VFX Captain Darwin Anim Trail Wing L Mat;//[Size: 8]
+	FloatProperty VFX Intro Sequence Time Update;//[Size: 4]
+	BoolProperty VFX Captain Darwin JetsOn?;//[Size: 1]
+	ObjectProperty VFX_CD_Jet_L_emitter;//[Size: 8]
+	ObjectProperty VFX_CD_Jet_R_emitter;//[Size: 8]
+	ObjectProperty VFX_CD_Jet_LS_emitter;//[Size: 8]
+	ObjectProperty VFX_CD_Jet_RS_emitter;//[Size: 8]
+	BoolProperty VFX Captain Darwin IsRocketJumping;//[Size: 1]
+	ObjectProperty VFX_DarkNinja_Smoke;//[Size: 8]
+	ObjectProperty VFX_CD_Jet_RH_emitter;//[Size: 8]
+	ObjectProperty VFX_CD_Jet_LH_emitter;//[Size: 8]
+	IntProperty SequenceCounter;//[Size: 4]
+	FloatProperty WingsDist;//[Size: 4]
+	ObjectProperty VFX_MatchStartTeleportEffect_Chest;//[Size: 8]
+	ObjectProperty VFX_MatchStartTeleportEffect_Head;//[Size: 8]
+	ObjectProperty VFX_MatchStartTeleportEffect_Thigh_L;//[Size: 8]
+	ObjectProperty VFX_MatchStartTeleportEffect_Thigh_R;//[Size: 8]
+	ObjectProperty VFX_MatchStartTeleportEffect_Calf_L;//[Size: 8]
+	ObjectProperty VFX_MatchStartTeleportEffect_Calf_R;//[Size: 8]
+	ObjectProperty VFX_MatchStartTeleportEffect_Shoulder_L;//[Size: 8]
+	ObjectProperty VFX_MatchStartTeleportEffect_Shoulder_R;//[Size: 8]
+	ObjectProperty VFX_MatchStartTeleportEffect_Forearm_L;//[Size: 8]
+	ObjectProperty VFX_MatchStartTeleportEffect_Forearm_R;//[Size: 8]
+	MulticastDelegateProperty PassiveAbilityUpdated;//[Size: 16]
+	EnumProperty RecentlyUpdatedPassive;//[Size: 1]
+	ObjectProperty VFX_TrackerDmgAugment;//[Size: 8]
+	ObjectProperty VFX Tracker Dmg Augment Emitter;//[Size: 8]
+	BoolProperty JetsEngaged;//[Size: 1]
+	MulticastDelegateProperty DisableGauntletIdleForCine;//[Size: 16]
+	MulticastDelegateProperty EnableGauntletIdleAfterCine;//[Size: 16]
+	ObjectProperty VFX_DoodadAcquisition_Emitter;//[Size: 8]
+	FloatProperty LastStormIntensity;//[Size: 4]
+	FloatProperty LastFogIntensity;//[Size: 4]
+	StructProperty VFX_BloodDecalColor;//[Size: 16]
+	StructProperty VFX_DMGDirection;//[Size: 12]
+	StructProperty VFX_DMGLocation;//[Size: 12]
+	BoolProperty VFX_IsProjectile;//[Size: 1]
+	ObjectProperty FalconCloneGeo;//[Size: 8]
+	FloatProperty FalconScanDuration;//[Size: 4]
+	NameProperty Celebration_M_Name;//[Size: 8]
+	NameProperty Ankle_R_Name;//[Size: 8]
+	NameProperty NeckSocket_Name;//[Size: 8]
+	NameProperty None_Name;//[Size: 8]
+	NameProperty CineAxeTipVFXSocket_CD_2_Name;//[Size: 8]
+	NameProperty CineAxeTipVFXSocket_CD_1_Name;//[Size: 8]
+	NameProperty CineAxeTipVFXSocket_CD_0_Name;//[Size: 8]
+	NameProperty MiddleFinger1_LSocket_Name;//[Size: 8]
+	NameProperty VFX_CD_WingTip_R_Name;//[Size: 8]
+	NameProperty VFX_CD_WingBase_R_Name;//[Size: 8]
+	NameProperty VFX_CD_WingTip_L_Name;//[Size: 8]
+	NameProperty VFX_CD_WingBase_L_Name;//[Size: 8]
+	NameProperty CineAxeTipVFXSocket_DN_2_Name;//[Size: 8]
+	NameProperty CineAxeTipVFXSocket_DN_1_Name;//[Size: 8]
+	NameProperty CineAxeTipVFXSocket_DN_0_Name;//[Size: 8]
+	NameProperty RootPart1_MSocket_Name;//[Size: 8]
+	NameProperty Chest_M_Socket_Name;//[Size: 8]
+	NameProperty Shoulder_L_Socket_Name;//[Size: 8]
+	NameProperty arrowHeadSocket_Name;//[Size: 8]
+	NameProperty Chest_M_Name;//[Size: 8]
+	NameProperty Celebration_L_Name;//[Size: 8]
+	NameProperty Celebration_R_Name;//[Size: 8]
+	NameProperty Tiling_Name;//[Size: 8]
+	NameProperty HighlightIntensity_Name;//[Size: 8]
+	NameProperty DeformationSystem_Name;//[Size: 8]
+	NameProperty VFX_CD_Jet_L_Name;//[Size: 8]
+	NameProperty VFX_CD_Jet_R_Name;//[Size: 8]
+	NameProperty VFX_CD_Jet_C_Name;//[Size: 8]
+	NameProperty VFX_CD_Jet_LS_Name;//[Size: 8]
+	NameProperty VFX_CD_Jet_RS_Name;//[Size: 8]
+	NameProperty VFX_CD_Jet_RH_Name;//[Size: 8]
+	NameProperty VFX_CD_Jet_LH_Name;//[Size: 8]
+	NameProperty Head_M_Name;//[Size: 8]
+	NameProperty Spine1Part2_M_Name;//[Size: 8]
+	NameProperty Color_Name;//[Size: 8]
+	NameProperty Neck_M_Name;//[Size: 8]
+	NameProperty InitTime_Name;//[Size: 8]
+	NameProperty Lifespan_Name;//[Size: 8]
+	NameProperty AxeTrailMaterial_Name;//[Size: 8]
+	NameProperty AxeHalf_Name;//[Size: 8]
+	NameProperty AxeTime_Name;//[Size: 8]
+	NameProperty CinematicTime_Name;//[Size: 8]
+	NameProperty HipPart1_L_Name;//[Size: 8]
+	NameProperty HipPart1_R_Name;//[Size: 8]
+	NameProperty Knee_L_Name;//[Size: 8]
+	NameProperty Knee_R_Name;//[Size: 8]
+	NameProperty Shoulder_L_Name;//[Size: 8]
+	NameProperty Shoulder_R_Name;//[Size: 8]
+	NameProperty Elbow_L_Name;//[Size: 8]
+	NameProperty Elbow_R_Name;//[Size: 8]
+	NameProperty Root_M_Name;//[Size: 8]
+	NameProperty Hip_L_Name;//[Size: 8]
+	NameProperty Hip_R_Name;//[Size: 8]
+
+--------------------------------
+Class: DarwinCharacter.Character.Pawn.Actor.Object
+	BoolProperty bCharacterTickOptim;//[Size: 1]
+	BoolProperty bModelTickOptim;//[Size: 1]
+	BoolProperty bModelComponentsTickOptim;//[Size: 1]
+	ArrayProperty TickRatesDistances;//[Size: 16]
+	ArrayProperty TickRates;//[Size: 16]
+	ObjectProperty DarwinGameState;//[Size: 8]
+	ObjectProperty DarwinController;//[Size: 8]
+	EnumProperty DarwinGameRole;//[Size: 1]
+	BoolProperty bCanJump;//[Size: 1]
+	BoolProperty bCanHarvestClue;//[Size: 1]
+	BoolProperty bCanHeal;//[Size: 1]
+	EnumProperty MinimapVisibility;//[Size: 1]
+	FloatProperty OverrideAxeDamage;//[Size: 4]
+	FloatProperty OverrideArrowDamage;//[Size: 4]
+	FloatProperty BodyScale;//[Size: 4]
+	ObjectProperty AxeBox;//[Size: 8]
+	ObjectProperty AxeCurveBox;//[Size: 8]
+	ObjectProperty ArrowBox;//[Size: 8]
+	FloatProperty CrouchingAxeBoxHalfHeight;//[Size: 4]
+	FloatProperty NormalAxeBoxHalfHeight;//[Size: 4]
+	FloatProperty CrouchingArrowBoxHalfHeight;//[Size: 4]
+	FloatProperty NormalArrowBoxHalfHeight;//[Size: 4]
+	FloatProperty HuntressHitBoxOffSet;//[Size: 4]
+	FloatProperty HuntressScale;//[Size: 4]
+	ObjectProperty HookMeshComponent;//[Size: 8]
+	BoolProperty bTargetDummy;//[Size: 1]
+	FloatProperty TargetDummyLeashLength;//[Size: 4]
+	BoolProperty bTestBot;//[Size: 1]
+	BoolProperty bUsingGamepad;//[Size: 1]
+	BoolProperty bUsingCraftingGamepadWheel;//[Size: 1]
+	ClassProperty AntiViolenceLootClass;//[Size: 8]
+	ClassProperty ManHuntLootClass;//[Size: 8]
+	ObjectProperty ManHuntCamCurve;//[Size: 8]
+	ObjectProperty ManHuntCamCurveSD;//[Size: 8]
+	StructProperty ManHuntOffset;//[Size: 12]
+	FloatProperty ManHuntFOV;//[Size: 4]
+	IntProperty ArchetypeID;//[Size: 4]
+	MapProperty InvadersLootClass;//[Size: 80]
+	FloatProperty JumpTimeStamp;//[Size: 4]
+	FloatProperty FallApexZ;//[Size: 4]
+	BoolProperty bFallingBecauseOfJump;//[Size: 1]
+	FloatProperty AimSensibilityRemappingMin;//[Size: 4]
+	FloatProperty AimSensibilityRemappingMax;//[Size: 4]
+	FloatProperty AxeSensibilityRemappingMin;//[Size: 4]
+	FloatProperty AxeSensibilityRemappingMax;//[Size: 4]
+	FloatProperty GamepadVerticalSensitivityMultiplier;//[Size: 4]
+	FloatProperty GamepadHorizontalSensitivityMultiplier;//[Size: 4]
+	BoolProperty bInConflict;//[Size: 1]
+	FloatProperty InConflictWidgetMaxDistance;//[Size: 4]
+	FloatProperty InConflictWidgetMinScale;//[Size: 4]
+	WeakObjectProperty DetachedBeholderDrone;//[Size: 8]
+	BoolProperty bDetachedToBeholder;//[Size: 1]
+	BoolProperty bIsHitFromAxe;//[Size: 1]
+	ObjectProperty HitAxeAttacker;//[Size: 8]
+	ArrayProperty SuitVersionArray;//[Size: 16]
+	ArrayProperty SuitVersionSortedArray;//[Size: 16]
+	IntProperty SuitVersionIndex;//[Size: 4]
+	ObjectProperty BreathParticleSystemComp;//[Size: 8]
+	ObjectProperty BreathParticleSystem;//[Size: 8]
+	FloatProperty AvatarYaw;//[Size: 4]
+	ObjectProperty HiddenMat;//[Size: 8]
+	ObjectProperty CamouflageMat;//[Size: 8]
+	ObjectProperty CamouflageMatDyn;//[Size: 8]
+	ByteProperty BasicMovementAxis;//[Size: 1]
+	FloatProperty StormIntensity;//[Size: 4]
+	FloatProperty AxeRadialForceDelay;//[Size: 4]
+	FloatProperty DetectingHighlightLevel;//[Size: 4]
+	FloatProperty DetectingHighlightByClueLevel;//[Size: 4]
+	MapProperty JerichoDefaultIndexes;//[Size: 80]
+	MapProperty ArtemisDefaultIndexes;//[Size: 80]
+	ObjectProperty CharacterTransparentMaterial;//[Size: 8]
+	ClassProperty BasicGuyCustomizationClass;//[Size: 8]
+	ClassProperty HuntressCustomizationClass;//[Size: 8]
+	ObjectProperty BasicGuyCustomization;//[Size: 8]
+	ObjectProperty HuntressCustomization;//[Size: 8]
+	IntProperty ShirtSkelIndex;//[Size: 4]
+	IntProperty PantsSkelIndex;//[Size: 4]
+	IntProperty SkinSkelIndex;//[Size: 4]
+	IntProperty ArmorSkelIndex;//[Size: 4]
+	IntProperty BootsSkelIndex;//[Size: 4]
+	IntProperty CoatSkelIndex;//[Size: 4]
+	IntProperty AxeSkelIndex;//[Size: 4]
+	IntProperty BowSkelIndex;//[Size: 4]
+	IntProperty HelmetSkelIndex;//[Size: 4]
+	IntProperty HairsSkelIndex;//[Size: 4]
+	IntProperty BeardSkelIndex;//[Size: 4]
+	IntProperty ShirtMatIndex;//[Size: 4]
+	IntProperty PantsMatIndex;//[Size: 4]
+	IntProperty SkinMatIndex;//[Size: 4]
+	IntProperty ArmorMatIndex;//[Size: 4]
+	IntProperty BootsMatIndex;//[Size: 4]
+	IntProperty CoatMatIndex;//[Size: 4]
+	IntProperty AxeMatIndex;//[Size: 4]
+	IntProperty BowMatIndex;//[Size: 4]
+	IntProperty HelmetMatIndex;//[Size: 4]
+	IntProperty EyesMatIndex;//[Size: 4]
+	IntProperty HairsMatIndex;//[Size: 4]
+	IntProperty BeardMatIndex;//[Size: 4]
+	IntProperty FacePaintIndex;//[Size: 4]
+	BoolProperty bUseBigBoots;//[Size: 1]
+	BoolProperty bUseCoatWithArmor;//[Size: 1]
+	BoolProperty bShowCoat;//[Size: 1]
+	BoolProperty bShowArmor;//[Size: 1]
+	BoolProperty bShowHands;//[Size: 1]
+	BoolProperty bShowHead;//[Size: 1]
+	ObjectProperty CustomCharacterModel;//[Size: 8]
+	FloatProperty PaintTimer;//[Size: 4]
+	ArrayProperty PaintDecals;//[Size: 16]
+	ClassProperty MainCharacterWidgetClass;//[Size: 8]
+	ObjectProperty MainCharacterWidget;//[Size: 8]
+	ClassProperty DebugWidgetClass;//[Size: 8]
+	ObjectProperty DebugWidget;//[Size: 8]
+	ClassProperty MiniDroneClass;//[Size: 8]
+	ArrayProperty CharacterComponentArray;//[Size: 16]
+	ObjectProperty HealthComponent;//[Size: 8]
+	ObjectProperty FootprintComponent;//[Size: 8]
+	ObjectProperty ColdFactorComponent;//[Size: 8]
+	ObjectProperty ContextualActionComponent;//[Size: 8]
+	ObjectProperty CraftingComponent;//[Size: 8]
+	ObjectProperty HarvestRessourceComponent;//[Size: 8]
+	ObjectProperty ShootingComponent;//[Size: 8]
+	ObjectProperty InventoryComponent;//[Size: 8]
+	ObjectProperty PassiveBonusComponent;//[Size: 8]
+	ObjectProperty AllianceComponent;//[Size: 8]
+	ObjectProperty AxeComponent;//[Size: 8]
+	ObjectProperty WalkSpeedComponent;//[Size: 8]
+	ObjectProperty StaminaComponent;//[Size: 8]
+	ObjectProperty FuelComponent;//[Size: 8]
+	ObjectProperty StatComponent;//[Size: 8]
+	ObjectProperty GliderComponent;//[Size: 8]
+	ObjectProperty JumpingComponent;//[Size: 8]
+	ObjectProperty GrenadeComponent;//[Size: 8]
+	ObjectProperty MalusBonusComponent;//[Size: 8]
+	ObjectProperty PerkComponent;//[Size: 8]
+	ObjectProperty DropKickComponent;//[Size: 8]
+	ObjectProperty SnowboardComponent;//[Size: 8]
+	ObjectProperty ChampionComponent;//[Size: 8]
+	ObjectProperty FalconComponent;//[Size: 8]
+	ObjectProperty TeleportPower;//[Size: 8]
+	ObjectProperty ForcefieldPower;//[Size: 8]
+	ObjectProperty PredatorPower;//[Size: 8]
+	ObjectProperty DetectorPower;//[Size: 8]
+	ObjectProperty CamouflagePower;//[Size: 8]
+	ObjectProperty SonarPower;//[Size: 8]
+	ObjectProperty RadialPushPower;//[Size: 8]
+	ObjectProperty GliderPower;//[Size: 8]
+	ObjectProperty RocketDashPower;//[Size: 8]
+	ObjectProperty WonderLeapPower;//[Size: 8]
+	ObjectProperty RocketLeapPower;//[Size: 8]
+	ObjectProperty GroundStompPower;//[Size: 8]
+	ObjectProperty PillDispenserPower;//[Size: 8]
+	ObjectProperty PortalPower;//[Size: 8]
+	ObjectProperty MagWallPower;//[Size: 8]
+	ObjectProperty HackingPower;//[Size: 8]
+	ObjectProperty RejuvePower;//[Size: 8]
+	ObjectProperty VampirePower;//[Size: 8]
+	ObjectProperty TurretPower;//[Size: 8]
+	ObjectProperty IceBoltPower;//[Size: 8]
+	ObjectProperty ShrinkPower;//[Size: 8]
+	ObjectProperty GiantPower;//[Size: 8]
+	ObjectProperty EaglePower;//[Size: 8]
+	ObjectProperty GrapplingHookPower;//[Size: 8]
+	ObjectProperty GrapplingGauntletPower;//[Size: 8]
+	ObjectProperty EnvironmentGauntletPower;//[Size: 8]
+	IntProperty DefaultTraitChargeCount;//[Size: 4]
+	IntProperty TraitChargeCount;//[Size: 4]
+	FloatProperty GamepadBaseTurnRate;//[Size: 4]
+	FloatProperty AimSmoothingLerpFrameFactorMax;//[Size: 4]
+	FloatProperty AimSmoothingMinLerp;//[Size: 4]
+	FloatProperty AimSmoothingFactor;//[Size: 4]
+	FloatProperty MaxAimEaseInPow;//[Size: 4]
+	StructProperty DarwinPlayerColor;//[Size: 16]
+	StructProperty DarwinPlayerOriginalColor;//[Size: 16]
+	IntProperty DarwinPlayerGradientIndex;//[Size: 4]
+	StructProperty DarwinPlayerGradient;//[Size: 32]
+	StructProperty CaptainDarwinGradient;//[Size: 32]
+	StructProperty DarwinPlayerOriginalGradient;//[Size: 32]
+	BoolProperty bActiveFootprintHighlights;//[Size: 1]
+	FloatProperty TurnOnSpotTime;//[Size: 4]
+	BoolProperty bShouldUseStrafeAnims;//[Size: 1]
+	FloatProperty DoubleTapGamePadSizeThreshold;//[Size: 4]
+	FloatProperty DoubleTapGamePadDotProductThreshold;//[Size: 4]
+	StructProperty InputDirection;//[Size: 8]
+	IntProperty PodiumRank;//[Size: 4]
+	BoolProperty bWinner;//[Size: 1]
+	ObjectProperty CurrentZone;//[Size: 8]
+	BoolProperty bIsPerformingEmote;//[Size: 1]
+	FloatProperty ReplicatedSlideTurnLeftRight;//[Size: 4]
+	ObjectProperty LavaPhysicalMaterial;//[Size: 8]
+	WeakObjectProperty KillerCharacter;//[Size: 8]
+	FloatProperty InsideNuclearBlastTimer;//[Size: 4]
+	FloatProperty LeashStrength;//[Size: 4]
+	StructProperty LeashSpikeLoc;//[Size: 12]
+	FloatProperty LeashLengthSq;//[Size: 4]
+	FloatProperty LeashLength;//[Size: 4]
+	FloatProperty GrappleJumpTimeAtEnd;//[Size: 4]
+	FloatProperty GrappleFrozenTime;//[Size: 4]
+	FloatProperty GrappleTotalTime;//[Size: 4]
+	FloatProperty GrappleRotTime;//[Size: 4]
+	FloatProperty CustomCurveTotalTime;//[Size: 4]
+	FloatProperty CustomCurveMiddleSpot;//[Size: 4]
+	FloatProperty CustomCurveRelativeHeight;//[Size: 4]
+	FloatProperty CustomCurvePower;//[Size: 4]
+	FloatProperty GrappleTime;//[Size: 4]
+	FloatProperty GrappleTimer;//[Size: 4]
+	FloatProperty GrappleBabeRuthBuffer;//[Size: 4]
+	FloatProperty TractionInitTime;//[Size: 4]
+	FloatProperty TractionInitTimer;//[Size: 4]
+	FloatProperty CustomCurveTime;//[Size: 4]
+	FloatProperty CustomCurveTimer;//[Size: 4]
+	FloatProperty MaxGrappleEndFloorDistanceToWalking;//[Size: 4]
+	IntProperty TapRequiredToRemoveControl;//[Size: 4]
+	FloatProperty TimeBeforeNextTapToRemoveControl;//[Size: 4]
+	StrProperty DarwinPlayerName;//[Size: 16]
+	StructProperty DarwinPlayerIdentity;//[Size: 40]
+	IntProperty DarwinPlayerIndex;//[Size: 4]
+	IntProperty DarwinUniqueID;//[Size: 4]
+	IntProperty TeamIndex;//[Size: 4]
+	BoolProperty bRookiePlayer;//[Size: 1]
+	StrProperty NetID;//[Size: 16]
+	StrProperty FriendNetId;//[Size: 16]
+	IntProperty OnlineId;//[Size: 4]
+	BoolProperty IsVoiceChatRestricted;//[Size: 1]
+	BoolProperty bHasEnteredLobby;//[Size: 1]
+	EnumProperty StreamingPlatform;//[Size: 1]
+	StrProperty StreamingAccessToken;//[Size: 16]
+	StrProperty StreamingPlatformId;//[Size: 16]
+	StrProperty StreamingPlatformNumericId;//[Size: 16]
+	IntProperty NumberOfSpectators;//[Size: 4]
+	IntProperty Elo;//[Size: 4]
+	BoolProperty bDead;//[Size: 1]
+	FloatProperty LootableDistance;//[Size: 4]
+	BoolProperty bLooted;//[Size: 1]
+	WeakObjectProperty DeadDecal;//[Size: 8]
+	ObjectProperty DeadDecalMaterial;//[Size: 8]
+	WeakObjectProperty DeadParticles;//[Size: 8]
+	BoolProperty bCraftMenuPressed;//[Size: 1]
+	FloatProperty ShootOnReleaseAxeVisibilityDelay;//[Size: 4]
+	FloatProperty GrenadeHitRadius;//[Size: 4]
+	FloatProperty GrenadeHitHalfHeightUp;//[Size: 4]
+	FloatProperty GrenadeHitHalfHeightDown;//[Size: 4]
+	FloatProperty GrenadeHitCrouchDiff;//[Size: 4]
+	BoolProperty bDebugShowGrenadeHitRadius;//[Size: 1]
+	FloatProperty ProjectileHitRadius;//[Size: 4]
+	FloatProperty ProjectileHitHalfHeightUp;//[Size: 4]
+	FloatProperty ProjectileHitHalfHeightDown;//[Size: 4]
+	FloatProperty ProjectileHitCrouchDiff;//[Size: 4]
+	FloatProperty ProjectileHitHeadShotRadius;//[Size: 4]
+	ArrayProperty TruncLocArray;//[Size: 16]
+	ArrayProperty AxeLocArray;//[Size: 16]
+	FloatProperty ZCompensation;//[Size: 4]
+	FloatProperty ZCompensationPower;//[Size: 4]
+	FloatProperty ArrowExtraZCompensation;//[Size: 4]
+	FloatProperty CraftingCancelledDelayBeforeItemUseInCraftingWheel;//[Size: 4]
+	BoolProperty bIsCrouching;//[Size: 1]
+	StructProperty SequenceCameraScale;//[Size: 12]
+	StructProperty SequenceCameraRotation;//[Size: 12]
+	StructProperty SequenceOtherScale;//[Size: 12]
+	StructProperty SequenceCharacterScale;//[Size: 12]
+	ArrayProperty HeroesSequences;//[Size: 16]
+	StructProperty InstanceHitTransform;//[Size: 48]
+	ObjectProperty InstancedStaticMeshComponent;//[Size: 8]
+	IntProperty InstanceIndex;//[Size: 4]
+	ObjectProperty InstanceStaticMesh;//[Size: 8]
+	ObjectProperty DarwinGameInstance;//[Size: 8]
+	ObjectProperty DarwinTrackingManager;//[Size: 8]
+	ClassProperty WalkCameraShake;//[Size: 8]
+	ClassProperty RunCameraShake;//[Size: 8]
+	ClassProperty ElectronicCameraShake;//[Size: 8]
+	ClassProperty NuclearCameraShake;//[Size: 8]
+	ClassProperty HitCameraShake;//[Size: 8]
+	ClassProperty LandCameraShake;//[Size: 8]
+	ClassProperty GliderCameraShake;//[Size: 8]
+	ClassProperty LavaZoneCameraShake;//[Size: 8]
+	BoolProperty bUseForceFeedback;//[Size: 1]
+	FloatProperty ForceFeedbackIntensity;//[Size: 4]
+	FloatProperty ForceFeedbackDuration;//[Size: 4]
+	BoolProperty ForceFeedbackLeftLarge;//[Size: 1]
+	BoolProperty ForceFeedbackLeftSmall;//[Size: 1]
+	BoolProperty ForceFeedbackRightLarge;//[Size: 1]
+	BoolProperty ForceFeedbackRightSmall;//[Size: 1]
+	BoolProperty bHasShield;//[Size: 1]
+	StructProperty WingsRotation;//[Size: 12]
+	StructProperty WingsQuat;//[Size: 16]
+	StructProperty WingsLocation;//[Size: 12]
+	StructProperty WingsScale;//[Size: 12]
+	BoolProperty bShowWings;//[Size: 1]
+	BoolProperty bShowGauntlet;//[Size: 1]
+	IntProperty GauntletLevel;//[Size: 4]
+	BoolProperty bUseSomePowerOnRelease;//[Size: 1]
+	ArrayProperty PowersTriggeredOnRelease;//[Size: 16]
+	BoolProperty bDummyCharacter;//[Size: 1]
+	BoolProperty bTutoClueCharacter;//[Size: 1]
+	MulticastDelegateProperty OnTutoClueCharacterKilled;//[Size: 16]
+	FloatProperty LocalRange;//[Size: 4]
+	FloatProperty HidingFoliageFXTimer;//[Size: 4]
+	ObjectProperty HidingFoliageParticleSystemComp;//[Size: 8]
+	ObjectProperty HidingFoliageParticleSystem;//[Size: 8]
+	ArrayProperty ShowDirectorPings;//[Size: 16]
+	IntProperty MinKillScrapReward;//[Size: 4]
+	IntProperty MinKillWoodReward;//[Size: 4]
+	FloatProperty CraftedPowerAndPassiveScrapCostRewardRedux;//[Size: 4]
+	IntProperty FirstBloodScrapReward;//[Size: 4]
+	void UsingCraftingGamepadWheel();// 0x811d10
+	void UpdateSkin();// 0x811cf0
+	void UpdateForceFeedback();// 0x811c00
+	void UpdateCustomCharacterModel();// 0x811b80
+	void UpdateAllCustomCharacterModel();// 0x811b60
+	void UnstuckMe();// 0x811b40
+	void UnlockCraftWheelIndex();// 0x811ac0
+	void UnlockAction();// 0x811a40
+	void ToggleBlackAndWhitePostProcess();// 0x8119b0
+	void TakePushBack();// 0x8117b0
+	void TakeHighResScreenShot();// 0x811790
+	void StopAllCameraShakes();// 0x811700
+	void ShowWings();// 0x811670
+	void SetDressRoomMode();// 0x8115e0
+	void ServerUpdateShowFlags();// 0x8113e0
+	void ServerUpdateModel();// 0x811390
+	void ServerUpdateAllModels();// 0x811340
+	void ServerUnstuckMe();// 0x811280
+	void ServerUnstuck();// 0x8111b0
+	void ServerUnFreeze();// 0x811160
+	void ServerTraitActionReleased();// 0x811110
+	void ServerTraitActionPressed();// 0x8110c0
+	void ServerSwapCoat();// 0x811000
+	void ServerSwapBootsAndPants();// 0x810f40
+	void ServerStartSequence();// 0x810e80
+	void ServerShowWings();// 0x810d70
+	void ServerShowingFoliage();// 0x810e30
+	void ServerShowGauntlet();// 0x810c30
+	void ServerSetUsingGamepad();// 0x810b70
+	void ServerSetUsingCraftingGamepadWheel();// 0x810ab0
+	void ServerSetStreamingInformation();// 0x810900
+	void ServerSetSimulatedCameraTransform();// 0x810810
+	void ServerSetShouldUseStrafe();// 0x810750
+	void ServerSetReplicatedSlideTurnLeftRight();// 0x8106a0
+	void ServerSetNumberOfSpectators();// 0x8105e0
+	void ServerSetNetIdAndOnlineId();// 0x810400
+	void ServerSetIsHighlightedByClue();// 0x810340
+	void ServerSetIsHighlighted();// 0x810240
+	void ServerSetInsideFoliageAndMoving();// 0x810180
+	void ServerSetInsideFoliage();// 0x8100c0
+	void ServerSetInputDirection();// 0x80ffc0
+	void ServerSetHasEnteredLobby();// 0x80ff70
+	void ServerSetCrouching();// 0x80feb0
+	void ServerSetControlPitch();// 0x80fdb0
+	void ServerSetBool();// 0x80fca0
+	void ServerSetBasicMovementAxis();// 0x80fbf0
+	void ServerRefreshOtherModels();// 0x80fa50
+	void ServerPlayerQuit();// 0x80f990
+	void ServerLeashMyself();// 0x80f6b0
+	void ServerJumpButtonReleased();// 0x80f660
+	void ServerJumpButtonPressed();// 0x80f610
+	void ServerInteruptTraction();// 0x80f560
+	void ServerInteruptGrapple();// 0x80f510
+	void ServerInitTeleportAimingClone();// 0x80f4c0
+	void ServerHidingFoliage();// 0x80f470
+	void ServerExecuteSDPower();// 0x80f370
+	void ServerEmoteAction();// 0x80f2b0
+	void ServerDisruptEnemyFalcon();// 0x80f1f0
+	void ServerDebugGotoToNextGameStart();// 0x80f1a0
+	void ServerDeactivateFootprintHighlights();// 0x80f150
+	void ServerCallRandomDeliveryDrone();// 0x80ef90
+	void ServerBreakCamouflage();// 0x80ef40
+	void ServerAddTraitCooldown();// 0x80ee90
+	void RemoveShowDirectorPing();// 0x80edc0
+	void PlayCameraShake();// 0x80ed00
+	void OverrideArchetype();// 0x80ec80
+	void OnRepWinner();// 0x80ec40
+	void OnRepSuitVersionIndex();// 0x80ec20
+	void OnRepShowWings();// 0x80ec00
+	void OnRepShowGauntlet();// 0x80ebe0
+	void OnRepShowDirectorPings();// 0x3f4d20
+	void OnRepPlayerIdentity();// 0x80ebc0
+	void OnRepNetId();// 0x80eba0
+	void OnReplicatePower();// 0x80ec60
+	void OnRepHasShield();// 0x80eb80
+	void OnRepGradient();// 0x80eb60
+	void OnRepDarwinUniqueID();// 0x80eb40
+	void OnRepCustomizationSkin();// 0x80bb50
+	void OnRepCustomizationShowFlags();// 0x80bb50
+	void OnRepCustomizationShirt();// 0x80bb50
+	void OnRepCustomizationPants();// 0x80bb50
+	void OnRepCustomizationHelmet();// 0x80bb50
+	void OnRepCustomizationHairs();// 0x80bb50
+	void OnRepCustomizationCoatWithArmor();// 0x80bb50
+	void OnRepCustomizationCoat();// 0x80bb50
+	void OnRepCustomizationBow();// 0x80bb50
+	void OnRepCustomizationBootsAndPants();// 0x80bb50
+	void OnRepCustomizationBoots();// 0x80bb50
+	void OnRepCustomizationBeard();// 0x80bb50
+	void OnRepCustomizationAxe();// 0x80bb50
+	void OnRepCustomizationArmor();// 0x80bb50
+	void OnRepCharacterName();// 0x80eb20
+	void OnRepBodyScale();// 0x80eb00
+	void NetMulticastUpdateEquipedCustomization();// 0x80e9c0
+	void NetMulticastUnTrip();// 0x80e910
+	void NetMulticastUnTrapped();// 0x80e8f0
+	void NetMulticastUnstuck();// 0x80e930
+	void NetMulticastUnHook();// 0x80e8d0
+	void NetMulticastUnFreeze();// 0x80e8b0
+	void NetMulticastUnBolt();// 0x80e890
+	void NetMulticastTurnOffArrowFire();// 0x80e870
+	void NetMulticastThrowingTraction();// 0x80e7e0
+	void NetMulticastSwitchGender();// 0x80e7c0
+	void NetMulticastStartSequence();// 0x80e730
+	void NetMulticastStartManHunt();// 0x80e710
+	void NetMulticastSpike();// 0x80e610
+	void NetMulticastShowingFoliage();// 0x80e5f0
+	void NetMulticastSetUsingGamepad();// 0x80e560
+	void NetMulticastSetUsingCraftingGamepadWheel();// 0x80e4d0
+	void NetMulticastSetTractionOn();// 0x80e2d0
+	void NetMulticastSetSimulatedCameraTransform();// 0x80e220
+	void NetMulticastSetLocAndRotAtGameStart();// 0x80e170
+	void NetMulticastSetInsideFoliageAndMoving();// 0x80e0e0
+	void NetMulticastSetInsideFoliage();// 0x80e050
+	void NetMulticastSetGrappleOn();// 0x80de70
+	void NetMulticastSetDead();// 0x80dde0
+	void NetMulticastSetControlPitch();// 0x80dd60
+	void NetMulticastSetBool();// 0x80dc50
+	void NetMulticastSetArrowOnFire();// 0x80dc30
+	void NetMulticastRemoveFromSpeakerMap();// 0x80db20
+	void NetMulticastReduceTraitCooldown();// 0x80db00
+	void NetMulticastProjectileHitArmor();// 0x80dae0
+	void NetMulticastProjectileHit();// 0x80d9a0
+	void NetMulticastPlayerQuit();// 0x80d900
+	void NetMulticastPlayerHit();// 0x80d750
+	void NetMulticastMutualVision();// 0x80d510
+	void NetMulticastManHunOutro();// 0x80d410
+	void NetMulticastLeashMyself();// 0x80d350
+	void NetMulticastLeash();// 0x80d250
+	void NetMulticastKill();// 0x80d0d0
+	void NetMulticastJumpButtonReleased();// 0x80d0b0
+	void NetMulticastJumpButtonPressed();// 0x80d090
+	void NetMulticastJoinTargetCharacterTeam();// 0x80d000
+	void NetMulticastInteruptTractionFromServer();// 0x80cf80
+	void NetMulticastInteruptTraction();// 0x80cf00
+	void NetMulticastInteruptGrapple();// 0x80cee0
+	void NetMulticastInitTeleportAimingClone();// 0x80cdd0
+	void NetMulticastInitialize();// 0x80cdf0
+	void NetMulticastHidingFoliage();// 0x80cdb0
+	void NetMulticastExecuteSDPower();// 0x80cbb0
+	void NetMulticastEndManHunt();// 0x80cae0
+	void NetMulticastEndInvade();// 0x80ca50
+	void NetMulticastEmoteAction();// 0x80c9c0
+	void NetMulticastDrawProjectileHitBox();// 0x80c830
+	void NetMulticastDebugServerLocation();// 0x80c7b0
+	void NetMulticastDeactivateFootprintHighlights();// 0x80c760
+	void NetMulticastCustomizationIndexes();// 0x80c030
+	void NetMulticastBurnt();// 0x80c010
+	void NetMulticastAddTraitCooldown();// 0x80bf40
+	void NetMulticastAcquirePoop();// 0x80be50
+	void NetMulticastAcquireClue();// 0x80bb70
+	void NeedCustomCharacterModels();// 0x80bb50
+	void LockCraftWheelIndex();// 0x80bad0
+	void LockAction();// 0x80ba50
+	void LeashMyself();// 0x80b9d0
+	void IsTestBot();// 0x80b9a0
+	void IsSliding();// 0x80b970
+	void IsShootOnReleaseActive();// 0x80b940
+	void IsPlayerAI();// 0x80b910
+	void IsOutOfBreath();// 0x80b8e0
+	void IsInBowEquipStance();// 0x80b8b0
+	void IsHero();// 0x80b880
+	void IsForcefieldActive();// 0x80b850
+	void IsDodgeOnDoubleTap();// 0x80b820
+	void IsDefender();// 0x80b7f0
+	void IsCaptainDarwin();// 0x80b7c0
+	void IsBowEquipStanceEnabled();// 0x80b790
+	void IsAIControlled();// 0x80b760
+	void InitTeleportAimingClone();// 0x80b740
+	void HasTrait();// 0x80b6b0
+	void HasPerk();// 0x80b620
+	void GoblinParade();// 0x80b600
+	void GetTruncLocation();// 0x80b5c0
+	void GetTrapTransform();// 0x80b560
+	void GetTrait();// 0x80b530
+	void GetShrunkScaleFactor();// 0x80b500
+	void GetRootLocation();// 0x80b4c0
+	void GetRightFootTransform();// 0x80b460
+	void GetPlayerIndex();// 0x80b430
+	void GetPlayerBodyType();// 0x80b400
+	void GetPlayerArchetype();// 0x80b3d0
+	void GetNumberOfGamesPlayed();// 0x80b3a0
+	void GetIsTripped();// 0x80b370
+	void GetIsTrapped();// 0x80b340
+	void GetIsThrowingGrenade();// 0x80b2b0
+	void GetIsTheWinner();// 0x80b280
+	void GetIsTeleporting();// 0x80b250
+	void GetIsSprinting();// 0x80b220
+	void GetIsSpawningCraftableTool();// 0x80b1f0
+	void GetIsShrunk();// 0x80b1c0
+	void GetIsShooting();// 0x80b190
+	void GetIsRocketDashing();// 0x80b160
+	void GetIsReloading();// 0x80b130
+	void GetIsManHunted();// 0x80b100
+	void GetIsLooted();// 0x80b0d0
+	void GetIsInsideFoliageAndMoving();// 0x80b0a0
+	void GetIsInsideFoliage();// 0x80b070
+	void GetIsInLobby();// 0x80b040
+	void GetIsInInterior();// 0x80b010
+	void GetIsInGrenadeCooldown();// 0x80afe0
+	void GetIsInForbiddenZone();// 0x80afb0
+	void GetIsIceBolting();// 0x80af80
+	void GetIsHooked();// 0x80af50
+	void GetIsHit();// 0x80af20
+	void GetIsHarvestingRessource();// 0x80ae90
+	void GetIsGliding();// 0x80ae60
+	void GetIsGliderCoolingDown();// 0x80ae30
+	void GetIsGiant();// 0x80ae00
+	void GetIsEagle();// 0x80add0
+	void GetIsDoingCoolStuff();// 0x80ada0
+	void GetIsDoingContextualAction();// 0x80ad70
+	void GetIsDodging();// 0x80ad40
+	void GetIsDead();// 0x80ad10
+	void GetIsCrouching();// 0x80ace0
+	void GetIsCrafting();// 0x80acb0
+	void GetIsContextualActionPressed();// 0x80ac90
+	void GetIsCamouflaged();// 0x80ac60
+	void GetIsBolted();// 0x80ac30
+	void GetIsBoloed();// 0x80ac00
+	void GetIsAxeSwinging();// 0x80abd0
+	void GetIsAimingTeleport();// 0x80aba0
+	void GetIsAimingGrenade();// 0x80ab70
+	void GetIsAiming();// 0x80ab40
+	void GetIsActivatingTechnology();// 0x80ab10
+	void GetHeadLocation();// 0x80aad0
+	void GetHasCanceledShoot();// 0x80aaa0
+	void GetGiantScaleFactor();// 0x80aa70
+	void GetAxeLocation();// 0x80aa30
+	void GetAxeHeadLocation();// 0x80a9f0
+	void GetArrowType();// 0x80a960
+	void GetArchetypeId();// 0x80a930
+	void FreezeFrame();// 0x80a910
+	void ForceFeedbackHit();// 0x80a8c0
+	void ForceFeedbackHarvest();// 0x80a870
+	void ForceFeedbackDead();// 0x80a820
+	void ForceFeedbackAxe();// 0x80a7d0
+	void ForceFeedbackArrow();// 0x80a780
+	void ExecuteSDPower();// 0x80a6c0
+	void EventZoneWillBeForbidden();// 0xb6a140
+	void EventUsingTractionStart();// 0xb6a140
+	void EventUsingTractionEnd();// 0xb6a140
+	void EventUpdateUsingTraction();// 0xb6a140
+	void EventUpdateTraction();// 0xb6a140
+	void EventUpdateStormParticles();// 0xb6a140
+	void EventUpdateNuclearFX();// 0xb6a140
+	void EventUpdateLeash();// 0xb6a140
+	void EventUpdateLavaAshes();// 0xb6a140
+	void EventUpdateJetPackVFX();// 0xb6a140
+	void EventUpdateHeroesPresentation();// 0xb6a140
+	void EventUpdateGravityStorm();// 0xb6a140
+	void EventUpdateGrapple();// 0xb6a140
+	void EventUpdateForceFeedback();// 0xb6a140
+	void EventUpdateCustomCurve();// 0xb6a140
+	void EventUpdateCableHookTick();// 0xb6a140
+	void EventUnTrapped();// 0xb6a140
+	void EventTurretHit();// 0xb6a140
+	void EventTurnOffArrowFire();// 0xb6a140
+	void EventTractionStart();// 0xb6a140
+	void EventTractionInterupt();// 0xb6a140
+	void EventTractionEnd();// 0xb6a140
+	void EventStopHidingFoliageFX();// 0xb6a140
+	void EventStartSequenceCountdown();// 0xb6a140
+	void EventSpawnSequenceEmitters();// 0xb6a140
+	void EventSpawnMysteryBox();// 0xb6a140
+	void EventSpawnDeadDecal();// 0xb6a140
+	void EventSpawnAmbientParticles();// 0xb6a140
+	void EventSetArrowOnFire();// 0xb6a140
+	void EventSequenceUpdate();// 0xb6a140
+	void EventSequenceEnd();// 0xb6a140
+	void EventSequenceBegin();// 0xb6a140
+	void EventProjectileHitArmor();// 0xb6a140
+	void EventProjectileHit();// 0xb6a140
+	void EventProjectileHeadShot();// 0xb6a140
+	void EventPresentHeroes();// 0xb6a140
+	void EventPassiveUpdated();// 0xb6a140
+	void EventNewPlayerJoined();// 0xb6a140
+	void EventNewOcarinaTarget();// 0xb6a140
+	void EventManHuntTerminate();// 0xb6a140
+	void EventManHuntActivate();// 0xb6a140
+	void EventLocalIsTheWinner();// 0xb6a140
+	void EventLocalIsLoser();// 0xb6a140
+	void EventLeashStart();// 0xb6a140
+	void EventLeashEnd();// 0xb6a140
+	void EventKilled();// 0xb6a140
+	void EventIsFavoritePlayer();// 0xb6a140
+	void EventInvadeTerminate();// 0xb6a140
+	void EventInteruptUsingTraction();// 0xb6a140
+	void EventHitByAxe();// 0xb6a140
+	void EventGrappleStart();// 0xb6a140
+	void EventGrappleInterupt();// 0xb6a140
+	void EventGrappleEnd();// 0xb6a140
+	void EventGameStarted();// 0xb6a140
+	void EventGameCountdownStarted();// 0xb6a140
+	void EventFreezeStart();// 0xb6a140
+	void EventFreezeEnd();// 0xb6a140
+	void EventForceFeedbackHit();// 0xb6a140
+	void EventForceFeedbackHarvest();// 0xb6a140
+	void EventForceFeedbackDead();// 0xb6a140
+	void EventForceFeedbackAxe();// 0xb6a140
+	void EventForceFeedbackArrow();// 0xb6a140
+	void EventExitFoliage();// 0xb6a140
+	void EventEnterSafeZone();// 0xb6a140
+	void EventEnterForbiddenZone();// 0xb6a140
+	void EventEnterFoliage();// 0xb6a140
+	void EventEndJetPackVFX();// 0xb6a140
+	void EventEmitHidingFoliageFX();// 0xb6a140
+	void EventDisolveHeroesPresentation();// 0xb6a140
+	void EventCustomCurveStart();// 0xb6a140
+	void EventCustomCurveInterupt();// 0xb6a140
+	void EventCustomCurveEnd();// 0xb6a140
+	void EventCloseCharacterCustomization();// 0xb6a140
+	void EventCharacterCustomization();// 0xb6a140
+	void EventCallDeliveryDrone();// 0xb6a140
+	void EventBurnt();// 0xb6a140
+	void EventBeginJetPackVFX();// 0xb6a140
+	void EventBecomesUnNaked();// 0xb6a140
+	void EventBecomesNaked();// 0xb6a140
+	void EventAxeRadialForce();// 0xb6a140
+	void EventAuthorityTick();// 0xb6a140
+	void EventArmorHit();// 0xb6a140
+	void DoUnstuck();// 0x80a630
+	void CloseCraftMenu();// 0x80a610
+	void ClientCastHecatombe();// 0x80a590
+	void CanUseJetPackAfterHit();// 0x80a560
+	void AddShowDirectorPing();// 0x80a4e0
+	void AddJetPack();// 0x3f4d20
+
+--------------------------------
+Class: Character.Pawn.Actor.Object
+	ObjectProperty Mesh;//[Size: 8]
+	ObjectProperty CharacterMovement;//[Size: 8]
+	ObjectProperty CapsuleComponent;//[Size: 8]
+	StructProperty BasedMovement;//[Size: 48]
+	StructProperty ReplicatedBasedMovement;//[Size: 48]
+	FloatProperty AnimRootMotionTranslationScale;//[Size: 4]
+	StructProperty BaseTranslationOffset;//[Size: 12]
+	StructProperty BaseRotationOffset;//[Size: 16]
+	FloatProperty ReplicatedServerLastTransformUpdateTimeStamp;//[Size: 4]
+	FloatProperty ReplayLastTransformUpdateTimeStamp;//[Size: 4]
+	ByteProperty ReplicatedMovementMode;//[Size: 1]
+	BoolProperty bInBaseReplication;//[Size: 1]
+	FloatProperty CrouchedEyeHeight;//[Size: 4]
+	BoolProperty bIsCrouched;//[Size: 1]
+	BoolProperty bProxyIsJumpForceApplied;//[Size: 1]
+	BoolProperty bPressedJump;//[Size: 1]
+	BoolProperty bClientUpdating;//[Size: 1]
+	BoolProperty bClientWasFalling;//[Size: 1]
+	BoolProperty bClientResimulateRootMotion;//[Size: 1]
+	BoolProperty bClientResimulateRootMotionSources;//[Size: 1]
+	BoolProperty bSimGravityDisabled;//[Size: 1]
+	BoolProperty bClientCheckEncroachmentOnNetUpdate;//[Size: 1]
+	BoolProperty bServerMoveIgnoreRootMotion;//[Size: 1]
+	BoolProperty bWasJumping;//[Size: 1]
+	FloatProperty JumpKeyHoldTime;//[Size: 4]
+	FloatProperty JumpForceTimeRemaining;//[Size: 4]
+	FloatProperty ProxyJumpForceStartedTime;//[Size: 4]
+	FloatProperty JumpMaxHoldTime;//[Size: 4]
+	IntProperty JumpMaxCount;//[Size: 4]
+	IntProperty JumpCurrentCount;//[Size: 4]
+	MulticastDelegateProperty OnReachedJumpApex;//[Size: 16]
+	MulticastDelegateProperty MovementModeChangedDelegate;//[Size: 16]
+	MulticastDelegateProperty OnCharacterMovementUpdated;//[Size: 16]
+	StructProperty SavedRootMotion;//[Size: 248]
+	StructProperty ClientRootMotionParams;//[Size: 64]
+	ArrayProperty RootMotionRepMoves;//[Size: 16]
+	StructProperty RepRootMotion;//[Size: 344]
+	void UnCrouch();// 0x1bf4040
+	void StopJumping();// 0x1bf4020
+	void StopAnimMontage();// 0x1bf3f90
+	void ServerMoveOld();// 0x1bf3b80
+	void ServerMoveNoBase();// 0x1bf3900
+	void ServerMoveDualNoBase();// 0x1bf3540
+	void ServerMoveDualHybridRootMotion();// 0x1bf30f0
+	void ServerMoveDual();// 0x1bf2ca0
+	void ServerMove();// 0x1bf2990
+	void RootMotionDebugClientPrintOnScreen();// 0x1bf28f0
+	void PlayAnimMontage();// 0x1bf27e0
+	void OnWalkingOffLedge();// 0x1bf2640
+	void OnRep_RootMotion();// 0x1bf2620
+	void OnRep_ReplicatedBasedMovement();// 0x864aa0
+	void OnRep_ReplayLastTransformUpdateTimeStamp();// 0x1bf2600
+	void OnRep_IsCrouched();// 0x864a40
+	void OnLaunched();// 0xb6a140
+	void OnLanded();// 0xb6a140
+	void OnJumped();// 0x1bf25e0
+	void LaunchCharacter();// 0x1bf24c0
+	void K2_UpdateCustomMovement();// 0xb6a140
+	void K2_OnStartCrouch();// 0xb6a140
+	void K2_OnMovementModeChanged();// 0xb6a140
+	void K2_OnEndCrouch();// 0xb6a140
+	void Jump();// 0x1bf0e00
+	void IsPlayingRootMotion();// 0x1bf0dd0
+	void IsPlayingNetworkedRootMotionMontage();// 0x1bf0da0
+	void IsJumpProvidingForce();// 0x1bf0d70
+	void GetCurrentMontage();// 0x1bf06e0
+	void GetBaseTranslationOffset();// 0x1bf06b0
+	void GetBaseRotationOffsetRotator();// 0x1bf0660
+	void GetAnimRootMotionTranslationScale();// 0x1bf0630
+	void Crouch();// 0x1bf05a0
+	void ClientVeryShortAdjustPosition();// 0x1bf0250
+	void ClientCheatWalk();// 0x1bf0230
+	void ClientCheatGhost();// 0x1bf0210
+	void ClientCheatFly();// 0x1bf01f0
+	void ClientAdjustRootMotionSourcePosition();// 0x1befe00
+	void ClientAdjustRootMotionPosition();// 0x1befb10
+	void ClientAdjustPosition();// 0x1bef8a0
+	void ClientAckGoodMove();// 0x1bef820
+	void CanJumpInternal();// 0x1bef7f0
+	void CanJump();// 0x1bef7c0
+	void CacheInitialMeshOffset();// 0x1bef6e0
+
+--------------------------------
